@@ -151,7 +151,7 @@ The singular points are $z = 1,2$.
 \smallskip
 
 \textbf{(c)} We wish to determine the singular points of $f(z) = \dfrac{z^2 + 1}{(z+2)
-(z^2 + 2z + 2)}$.
+(z^2 + 2z + 2)}$. The singular points are $z=-2, 1 \pm i$. 
 
 
 \end{solution}
@@ -161,10 +161,21 @@ The singular points are $z = 1,2$.
 \begin{question}[4. Brown p90. 5]
 \end{question}
 \begin{solution}
-Hence,
+The terms $| \mathrm{exp}(2z + i) |$ and $| \mathrm{exp}(iz^2 )|$ can be written as
+\eQnb \label{eq:xy}
+|\mathrm{exp}(2z + i) | = |\mathrm{exp}(2x + i(2y+1) ) | = e^{2x} \\
+|\mathrm{exp}(iz^2) = |\mathrm{exp}(-2xy + i(x^2 - y^2))| = e^{2xy}.
+\eQne
+By the triangle-inequality, we have that 
 \eQb
-| \mathrm{exp}(2z + i) |
+|\mathrm{exp}(2z + i) + \mathrm{exp}(iz^2 )| \leq 
+|\mathrm{exp}(2z + i) | + |\mathrm{exp} (iz^2 ) |. 
 \eQe
+Using the \ref{eq:xy} substitution, we can conclude that
+\eQb
+|\mathrm{exp}(2z + i) + \mathrm{exp}(iz^2) | \leq \mathrm{e}^{2x} + \mathrm{e}^{-2xy}.
+\eQe
+$\qed$
 \end{solution}
 
 \pagebreak
@@ -216,5 +227,71 @@ must equal the real and imaginary part of the convergent value respectively. Hen
 when $0 < r < 1$. $\qed$
 
 \end{solution}
+
+\pagebreak
+
+\begin{question}[6. Radius Convergence I]
+\end{question}
+\begin{solution}
+We wish to find the radius of convergence of the power series 
+\[
+\sum_{k=1}^{\infty} \dfrac{(-1)^k}{k} z^{k(k+1)}.
+\]
+Let $s_k$ denote the $k$th term of the above power series.
+From the ratio test, we know that a series $\sum_{k=1} s_k$ converges if 
+$\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | < 1$ and diverges
+if $|\dfrac{s_{k+1}}{s_k} | \geq 1$ for all $k \geq k_0$, where $n_0$ is some
+fixed integer. We proceed to compute $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k}|$.
+
+\eQb
+\limsup_{k \to \infty} | \dfrac{s_{k+1}}{s_k} | &=& \limsup_{k \to \infty}
+|\dfrac{\dfrac{(-1)^{k+1}}{k+1}z^{(k+1)(k+2)}}{\dfrac{(-1)^k}{k}z^{k(k+1)}}| \\
+&=& \limsup_{k \to \infty} |\dfrac{-k}{k+1}z^2| \\
+&\leq& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^2 | \\
+&=& |z^2|\limsup_{k \to \infty} |\dfrac{k}{k+1}| \\
+&\leq& |z|^2.
+\eQe
+
+For $|z| < 1$, we have that $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | \leq |z|^2 < 1$.
+Hence, the series converges when $|z| < 1$. For $|z| > 1$, we have that 
+$\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | \geq |z|^2 > 1$. Hence, the series diverges
+when $|z| > 1$. Therefore, we have that the radius of convergence of the given sequence is $1$. \\
+
+\smallskip
+
+Now, we discuss the convergence for $z = 1$ and $-1$, and $i$. For $z = 1,-1$, 
+as $z^{k(k+1)} = 1$ for all $k$, the series simplifies to
+\[
+\sum_{k=1}^{\infty} \dfrac{(-1)^k}{k}.
+\]
+
+Notice that $-\dfrac{1}{k} +\dfrac{1}{k+1} = -\dfrac{1}{k(k+1)}$ for $k \geq 1$. Hence, the above series
+can be re-written in the following way: 
+\[
+\sum_{k=1}^{\infty} \dfrac{(-1)^k}{k} = -\sum_{k=1}^{\infty}\dfrac{1}{(2k-1)(2k)}.
+\]
+
+Observe that
+\[
+-\dfrac{1}{(2k-1)(2k-1)}\leq -\dfrac{1}{(2k-1)(2k)} \leq 0, 
+\]
+for $k \leq 1$.
+As $\sum_{k=1}^{\infty}\dfrac{1}{k^2}$ converges to $0$,
+$\sum_{k=0}^{\infty} -\dfrac{1}{(2k-1)(2k-1)}$ converges to $0$, and by the squeeze theorem,
+we have that $\sum_{k=1}\dfrac{1}{(2k-1)(2k)}$ converges to $0$. Thus, the given series is
+convergent for $z = 1$ and $-1$. \\
+
+\pagebreak
+
+For $z = i$, 
+\end{solution}
+
+\bigskip
+
+\begin{question}[7. Radius Convergence II]
+\end{question}
+\begin{solution}
+\end{solution}
+
 
 \end{document}
