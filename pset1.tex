@@ -1,0 +1,220 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips14submit_e,times}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\def\eQb#1\eQe{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\eQnb#1\eQne{\begin{eqnarray}#1\end{eqnarray}}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\providecommand{\pb}[0]{\pagebreak}
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+
+\def\Qb#1\Qe{\begin{question}#1\end{question}}
+\def\Sb#1\Se{\begin{solution}#1\end{solution}}
+
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newtheoremstyle{quest}{\topsep}{\topsep}{}{}{\bfseries}{}{ }{\thmname{#1}\thmnote{ #3}.}
+\theoremstyle{quest}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{question}{Question}
+\newtheorem*{preposition}{Preposition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{challengeproblem}{Challenge Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+\usepackage{verbatimbox}
+\usepackage{listings}
+\title{Complex Analysis: \\
+Problem Set I}
+
+
+\author{
+Youngduck Choi \\
+CILVR Lab \\
+New York University\\
+\texttt{yc1104@nyu.edu} \\
+}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+This work contains the solutions to the problem set I
+of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
+\end{abstract}
+
+\begin{question}[1. Brown p61. 1]
+\end{question}
+\begin{solution}
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[2. Brown p61. 2]
+\end{question}
+\begin{solution} We differentiate four given functions of $z$. \\
+
+\smallskip
+
+\textbf{(a)} We wish to differentiate $f(z) = 3z^2 - 2z + 4$. Simply applying the power rule,
+we obtain $f^{'}(z) = 6z - 2$. \\
+
+\smallskip
+
+\textbf{(b)} We wish to differentiate $f(z) = (2z^2 + i)^5$. Applying the chain rule,
+we obtain 
+\eQb
+f^{'}(z) &=& 5(2z^2 + i)^4 \cdot 4z \\
+&=& 20z(2z^2 + i)^4.
+\eQe
+
+\smallskip
+
+\textbf{(c)} We wish to differentiate $f(z) = \dfrac{z-1}{2z+1} \> (z \neq \dfrac{1}{2})$. 
+Applying the quotient rule, we obtain 
+\eQb
+f^{'}(z) &=& \dfrac{(2z+1)(1) - (z-1)(2)}{(2z+1)^2} \\ 
+&=& \dfrac{3}{(2z+1)^2},
+\eQe
+for $z \neq \dfrac{1}{2}$.
+
+\smallskip
+
+\textbf{(d)} We wish to differentiate $f(z) = \dfrac{(1+z^2)^4}{z^2} \> (z \neq 0)$. Applying
+the quotient rule, we obtain
+\eQb
+f^{'}(z) &=& \dfrac{(z^2)(\dfrac{d}{dz} (1+z^2)^4) - (1+z^2)^4 (2z)}{z^4},
+\eQe
+for $z \neq 0$.
+Using the chain rule to resolve $\dfrac{d}{dz} (1+z^2)^4$ term, we finally get
+\eQb
+f^{'}(z) &=& \dfrac{(z^2)(4)(1+z^2)^3(2z) - (1+z^2)^4(2z)}{z^4} \\
+&=& \dfrac{8z^3(1+z^2)^3 - 2z(1+z^2)^4}{z^4} \\
+&=& \dfrac{8z^2(1+z^2)^3 - 2(1+z^2)^4}{z^3} \\
+&=& \dfrac{2(1+z^2)^3(3z^2 - 1)}{z^3}, \\
+\eQe
+for $z \neq 0$.
+\end{solution}
+
+\bigskip
+
+\begin{question}[3. Brown p76. 4]
+\end{question}
+\begin{solution}
+We determine the singular points of the three given functions of $z$.
+
+\smallskip
+
+\textbf{(a)} We wish to determine the singular points of $f(z) = \dfrac{2z + 1}{z(z^2+1)}$.
+The singular points are $z = 0, \pm i$.
+\smallskip
+
+\textbf{(b)} We wish to determine the singular points of $f(z) = \dfrac{z^3 + i}{z^2 - 3z + 2}$.
+Notice that the function definition can be factorized as
+\[
+f(z) = \dfrac{z^3 + i}{(z-2)(z-1)}.
+\]
+The singular points are $z = 1,2$.
+\smallskip
+
+\textbf{(c)} We wish to determine the singular points of $f(z) = \dfrac{z^2 + 1}{(z+2)
+(z^2 + 2z + 2)}$.
+
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[4. Brown p90. 5]
+\end{question}
+\begin{solution}
+Hence,
+\eQb
+| \mathrm{exp}(2z + i) |
+\eQe
+\end{solution}
+
+\pagebreak
+
+\begin{question}[5. Brown p185. 4]
+\end{question}
+\begin{solution}
+We have the following summation formulation:
+\eQnb \label{eq:sum} 
+\sum_{n=1}^{\infty} z^n &=& \dfrac{z}{1-z},
+\eQne
+whenever $|z| < 1$. Substituting $r\mathrm{e}^{i\theta}$ for $z$
+and separating the real and imaginary parts, we can re-write the LHS as
+\begin{eqnarray} \label{eq:LHS}
+\sum_{n=1}^{\infty} z^n &=& \sum_{n=0}^{\infty} (r\mathrm{e}^{i\theta})^n \nonumber \\
+&=& \sum_{n=1}^{\infty} r^n \mathrm{e}^{in \theta} \nonumber \\
+&=& \sum_{n=1}^{\infty} r^n \mathrm{cos}(n \theta ) + i \sum_{n=0}^{\infty} r^n \mathrm{sin}(n \theta). 
+\end{eqnarray} 
+Now, multiplying both denominator and numerator by the conjugate of $1 -z$, $1 - \overline{z}$,
+we can re-write the RHS as
+\eQb
+\dfrac{z}{1-z} &=& \dfrac{z(1-\overline{z})}{(1-z)(1-\overline{z})} \\
+&=& \dfrac{z - z\overline{z}}{1 + z\overline{z} - (z + \overline{z})}. \\
+\eQe
+Substituting $z =r\mathrm{cos}(\theta ) + i\mathrm{sin}(\theta )$,
+$z\overline{z} = r^2$, and  $z + \overline{z} = 2r\mathrm{cos}(\theta )$ to the last expression,
+and separating the real and imaginary parts,
+we obtain
+\begin{eqnarray} \label{eq:RHS}
+\dfrac{z}{1-z} &=& \dfrac{r\mathrm{cos}(\theta ) - r^2 + ir\mathrm{sin}(\theta ) }
+{1 + r^2 - 2r\mathrm{cos}(\theta )} \nonumber \\
+&=& \dfrac{r\mathrm{cos}(\theta ) - r^2}{1+r^2 - 2r\mathrm{cos}(\theta )} 
++ \dfrac{r\mathrm{sin}(\theta )}{1 + r^2 -2r\mathrm{cos}(\theta ) }i.  
+\end{eqnarray}
+Substituting \ref{eq:RHS} and \ref{eq:LHS} to \ref{eq:sum}, we obtain
+\eQnb
+\sum_{n=1}^{\infty} r^n \mathrm{cos}(n \theta ) + i \sum_{n=0}^{\infty} r^n \mathrm{sin}(n \theta) 
+&=& \dfrac{r\mathrm{cos}(\theta ) - r^2}{1+r^2 - 2r\mathrm{cos}(\theta )} 
++ \dfrac{r\mathrm{sin}(\theta )}{1 + r^2 -2r\mathrm{cos}(\theta ) }i.  
+\eQne
+By the Theorem from section $61$, we know that the real and imaginary part of the series
+must equal the real and imaginary part of the convergent value respectively. Hence, we have that
+\eQb
+\sum_{n=1}^{\infty} r^n \mathrm{cos}(n \theta) = \dfrac{r\mathrm{cos}(\theta ) - r^2}{1 - 
+2r\mathrm{cos}(\theta ) + r^2} \\
+\sum_{n=1}^{\infty} r^n \mathrm{sin} (n \theta) = \dfrac{r\mathrm{sin}(\theta )}{1 - 2r\mathrm{cos}
+(\theta ) + r^2},
+\eQe
+when $0 < r < 1$. $\qed$
+
+\end{solution}
+
+\end{document}
