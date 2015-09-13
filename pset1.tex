@@ -78,7 +78,26 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \begin{question}[1. Brown p61. 1]
 \end{question}
 \begin{solution}
-
+We wish to give a direct proof that 
+\eQb
+\dfrac{dw}{dz} = 2z \> \> \text{when } \> \> w = z^2,
+\eQe
+using the definition $(3)$ in section $19$, which is
+\eQb
+\dfrac{dw}{dz} = \underset{\triangle z \to 0 }{\lim} \dfrac{\triangle w }{\triangle z}.
+\eQe
+We proceed to compute $\underset{\triangle z \to 0}{\lim} \dfrac{\triangle w }{\triangle z}$,
+given that $w = z^2$.
+\eQb
+\underset{\triangle z \to 0}{\lim} \dfrac{\triangle w}{\triangle z} &=& 
+\underset{\triangle z \to 0}{\lim} (({\triangle z} + z)^2 - z^2) 
+\dfrac{1}{\triangle z} \\
+&=& \underset{\triangle z \to 0}{\lim} ({\triangle z}^2 + 2z{\triangle z})
+\dfrac{1}{\triangle z} \\ 
+&=& \underset{\triangle z \to 0}{\lim} {\triangle z} + 2z \\
+&=& 2z.
+\eQe
+Therefore, we have shown that $\dfrac{dw}{dz} = 2z$. $\qed$
 \end{solution}
 
 \bigskip
@@ -156,7 +175,7 @@ The singular points are $z = 1,2$.
 
 \end{solution}
 
-\bigskip
+\pagebreak
 
 \begin{question}[4. Brown p90. 5]
 \end{question}
@@ -166,19 +185,22 @@ The terms $| \mathrm{exp}(2z + i) |$ and $| \mathrm{exp}(iz^2 )|$ can be written
 |\mathrm{exp}(2z + i) | = |\mathrm{exp}(2x + i(2y+1) ) | = e^{2x} \\
 |\mathrm{exp}(iz^2) = |\mathrm{exp}(-2xy + i(x^2 - y^2))| = e^{2xy}.
 \eQne
+
 By the triangle-inequality, we have that 
 \eQb
 |\mathrm{exp}(2z + i) + \mathrm{exp}(iz^2 )| \leq 
 |\mathrm{exp}(2z + i) | + |\mathrm{exp} (iz^2 ) |. 
 \eQe
+
 Using the \ref{eq:xy} substitution, we can conclude that
 \eQb
 |\mathrm{exp}(2z + i) + \mathrm{exp}(iz^2) | \leq \mathrm{e}^{2x} + \mathrm{e}^{-2xy}.
 \eQe
 $\qed$
+
 \end{solution}
 
-\pagebreak
+\bigskip
 
 \begin{question}[5. Brown p185. 4]
 \end{question}
@@ -247,14 +269,14 @@ fixed integer. We proceed to compute $\underset{k \to \infty}{\limsup} | \dfrac{
 \limsup_{k \to \infty} | \dfrac{s_{k+1}}{s_k} | &=& \limsup_{k \to \infty}
 |\dfrac{\dfrac{(-1)^{k+1}}{k+1}z^{(k+1)(k+2)}}{\dfrac{(-1)^k}{k}z^{k(k+1)}}| \\
 &=& \limsup_{k \to \infty} |\dfrac{-k}{k+1}z^2| \\
-&\leq& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^2 | \\
+&=& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^2 | \\
 &=& |z^2|\limsup_{k \to \infty} |\dfrac{k}{k+1}| \\
-&\leq& |z|^2.
+&=& |z|^2.
 \eQe
 
-For $|z| < 1$, we have that $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | \leq |z|^2 < 1$.
+For $|z| < 1$, we have that $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | = |z|^2 < 1$.
 Hence, the series converges when $|z| < 1$. For $|z| > 1$, we have that 
-$\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | \geq |z|^2 > 1$. Hence, the series diverges
+$\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | = |z|^2 > 1$. Hence, the series diverges
 when $|z| > 1$. Therefore, we have that the radius of convergence of the given sequence is $1$,
 with the center being the origin.\\
 
@@ -304,14 +326,18 @@ we know that a series $\sum_{k=1}^{\infty}$ converges if $\underset{k \to \infty
 \eQb
 \underset{k \to \infty}{\limsup} | s_k |^{\frac{1}{k}} &=& 
 \underset{k \to \infty}{\limsup} |\dfrac{k^2}{4^k + 5k}z^k|^{\frac{1}{k}} \\
-&\leq& \underset{k \to \infty}{\limsup} 
+&=& \underset{k \to \infty}{\limsup} 
 |\dfrac{k^2}{4^k + 5k}|^{\frac{1}{k}}|z^k|^{\frac{1}{k}} \\
-&=& |z| \underset{k \to \infty}{\limsup} |\dfrac{k^2}{4^k + 5k}|^{\frac{1}{k}} \\
+&=& |z| \underset{k \to \infty}{\limsup} |(\dfrac{k^2}{4^k + 5k})^{\frac{1}{k}}| \\
 &=& \dfrac{1}{4} |z|.
 \eQe
 
 For $|z| < 4$, we have that $\underset{k \to \infty}{\limsup} |s_k|^{\frac{1}{k}}
-\leq \dfrac{1}{4}|z| < 1$. Hence, the series converges  when $|z| < 4$.
+= \dfrac{1}{4}|z| < 1$. Hence, the series converges when $|z| < 4$.
+For $|z| > 4$, we have that $\underset{k \to \infty}{\limsup} |s_k|^{\frac{1}{k}}
+= \dfrac{1}{4}|z| > 1$. Hence, the series diverges when $|z| > 4$. Therefore,
+we have that the radius of convergence of the given sequence is $4$, with the
+center being the origin. $\qed$
 
 \end{solution}
 
