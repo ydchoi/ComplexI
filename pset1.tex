@@ -262,16 +262,18 @@ We wish to find the radius of convergence of the power series
 Let $s_k$ denote the $k$th term of the above power series.
 From the ratio test, we know that a series $\sum_{k=1} s_k$ converges if 
 $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | < 1$ and diverges
-if $|\dfrac{s_{k+1}}{s_k} | \geq 1$ for all $k \geq k_0$, where $n_0$ is some
+if $|\dfrac{s_{k+1}}{s_k} | \geq 1$ for all $k \geq k_0$, where $k_0$ is some
 fixed integer. We proceed to compute $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k}|$.
 
 \eQb
 \limsup_{k \to \infty} | \dfrac{s_{k+1}}{s_k} | &=& \limsup_{k \to \infty}
 |\dfrac{\dfrac{(-1)^{k+1}}{k+1}z^{(k+1)(k+2)}}{\dfrac{(-1)^k}{k}z^{k(k+1)}}| \\
 &=& \limsup_{k \to \infty} |\dfrac{-k}{k+1}z^{2(k+1)}| \\
-&=& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^{2(k+1)} | \\
+&=& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^{2(k+1)} |. \\
 \eQe
+
 As $\dfrac{k}{k+1}> 0$ for all $k$, and $|z^{2(k+1)}| \leq 0$, we have
+
 \eQb
 \limsup_{k \to \infty} | \dfrac{s_{k+1}}{s_k} |
 &=& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^{2(k+1)} | \\
@@ -284,10 +286,12 @@ As $0 \leq \underset{k \to \infty}{\limsup}|\dfrac{s_{k+1}}{s_k}| \leq
 \underset{k \to \infty}{\limsup} |z^{2(k+1)}| = 0$, we obtain that 
 $\underset{k \to \infty}{\limsup} |\dfrac{s_{k+1}}{s_k}| = 0$, and
 $\underset{k \to \infty}{\limsup} |\dfrac{s_{k+1}}{s_k}| < 1$.
-Hence, the series converges when $|z| < 1$. For $|z| > 1$, we have that 
-$\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | = |z|^2 > 1$. Hence, the series diverges
-when $|z| > 1$. Therefore, we have that the radius of convergence of the given sequence is $1$,
-with the center being the origin.\\
+Hence, the series converges when $|z| < 1$.  
+In the above computation, we have shown that $|\dfrac{s_{k+1}}{s_k}| = 
+|\dfrac{k}{k+1}||z^{2(k+1)}|$. Notice that for $|z| > 1$, 
+$\underset{k \to \infty}{\lim}|z^{2(k+1)}| = \infty$.
+Therefore, there exists $k_0$, such that for all $k \geq k_0$, 
+$|\dfrac{s_{k+1}}{s_k}| \geq 1$. Hence, the series diverges when $|z| > 1$. \\
 
 \smallskip
 
@@ -303,14 +307,17 @@ can be re-written in the following way:
 \sum_{k=1}^{\infty} \dfrac{(-1)^k}{k} = -\sum_{k=1}^{\infty}\dfrac{1}{(2k-1)(2k)}.
 \]
 
+\pagebreak
+
 Observe that
-\[
+\eQnb \label{eq:term}
 -\dfrac{1}{(2k-1)(2k-1)}\leq -\dfrac{1}{(2k-1)(2k)} \leq 0, 
-\]
+\eQne
 for $k \leq 1$.
-As $\sum_{k=1}^{\infty}\dfrac{1}{k^2}$ converges to $0$,
-$\sum_{k=0}^{\infty} -\dfrac{1}{(2k-1)(2k-1)}$ converges to $0$, and by the squeeze theorem,
-we have that $\sum_{k=1}\dfrac{1}{(2k-1)(2k)}$ converges to $0$. Thus, the given series is
+As $\sum_{k=1}^{\infty}\dfrac{1}{k^2}$ converges absolutely and $(7)$ holds,
+by the direct comparison test, 
+$\sum_{k=0}^{\infty} -\dfrac{1}{(2k-1)(2k-1)}$ converges absolutely.
+Thus, the given series is
 convergent for $z = 1$ and $-1$. \\
 
 For $z = i$, 
