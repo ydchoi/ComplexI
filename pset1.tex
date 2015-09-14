@@ -268,13 +268,22 @@ fixed integer. We proceed to compute $\underset{k \to \infty}{\limsup} | \dfrac{
 \eQb
 \limsup_{k \to \infty} | \dfrac{s_{k+1}}{s_k} | &=& \limsup_{k \to \infty}
 |\dfrac{\dfrac{(-1)^{k+1}}{k+1}z^{(k+1)(k+2)}}{\dfrac{(-1)^k}{k}z^{k(k+1)}}| \\
-&=& \limsup_{k \to \infty} |\dfrac{-k}{k+1}z^2| \\
-&=& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^2 | \\
-&=& |z^2|\limsup_{k \to \infty} |\dfrac{k}{k+1}| \\
-&=& |z|^2.
+&=& \limsup_{k \to \infty} |\dfrac{-k}{k+1}z^{2(k+1)}| \\
+&=& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^{2(k+1)} | \\
+\eQe
+As $\dfrac{k}{k+1}> 0$ for all $k$, and $|z^{2(k+1)}| \leq 0$, we have
+\eQb
+\limsup_{k \to \infty} | \dfrac{s_{k+1}}{s_k} |
+&=& \limsup_{k \to \infty} | \dfrac{k}{k+1} | |z^{2(k+1)} | \\
+&\leq& \limsup_{k \to \infty} |\dfrac{k}{k+1} | \limsup_{k \to \infty} |z^{2(k+1)}| \\
+&=& \limsup_{k \to \infty}|z^{2(k+1)}|. 
 \eQe
 
-For $|z| < 1$, we have that $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | = |z|^2 < 1$.
+For $|z| < 1$, we have that $\underset{k \to \infty}{\limsup} |z^{2(k+1)}| = 0$.
+As $0 \leq \underset{k \to \infty}{\limsup}|\dfrac{s_{k+1}}{s_k}| \leq 
+\underset{k \to \infty}{\limsup} |z^{2(k+1)}| = 0$, we obtain that 
+$\underset{k \to \infty}{\limsup} |\dfrac{s_{k+1}}{s_k}| = 0$, and
+$\underset{k \to \infty}{\limsup} |\dfrac{s_{k+1}}{s_k}| < 1$.
 Hence, the series converges when $|z| < 1$. For $|z| > 1$, we have that 
 $\underset{k \to \infty}{\limsup} | \dfrac{s_{k+1}}{s_k} | = |z|^2 > 1$. Hence, the series diverges
 when $|z| > 1$. Therefore, we have that the radius of convergence of the given sequence is $1$,
@@ -303,8 +312,6 @@ As $\sum_{k=1}^{\infty}\dfrac{1}{k^2}$ converges to $0$,
 $\sum_{k=0}^{\infty} -\dfrac{1}{(2k-1)(2k-1)}$ converges to $0$, and by the squeeze theorem,
 we have that $\sum_{k=1}\dfrac{1}{(2k-1)(2k)}$ converges to $0$. Thus, the given series is
 convergent for $z = 1$ and $-1$. \\
-
-\pagebreak
 
 For $z = i$, 
 \end{solution}
