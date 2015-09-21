@@ -40,7 +40,7 @@
 \newtheorem*{remark}{Remark}
 \usepackage{verbatimbox}
 \usepackage{listings}
-\title{Complex Analysis: \\
+\title{Complex Analysis I: \\
 Problem Set I}
 
 
@@ -158,7 +158,10 @@ We determine the singular points of the three given functions of $z$.
 \smallskip
 
 \textbf{(a)} We wish to determine the singular points of $f(z) = \dfrac{2z + 1}{z(z^2+1)}$.
-The singular points are $z = 0, \pm i$.
+Notice that $2z + 1$ and $z(z^2 + 1)$ are differentiable everywhere. Hence, by the quotient
+rule, we know that $f(z)$ is differentiable, thus analytic everywhere, other than where
+$z(z^2 + 1) = 0$. Therefore, The singular points are $z = 0, \pm i$ and $f(z)$ is analytic
+everywhere else.
 \smallskip
 
 \textbf{(b)} We wish to determine the singular points of $f(z) = \dfrac{z^3 + i}{z^2 - 3z + 2}$.
@@ -166,11 +169,14 @@ Notice that the function definition can be factorized as
 \[
 f(z) = \dfrac{z^3 + i}{(z-2)(z-1)}.
 \]
-The singular points are $z = 1,2$.
+Again, with the same reasoning through the quotient rule, we have that 
+the singular points are $z = 1,2$, and $f(z)$ is analytic everywhere else.
 \smallskip
 
 \textbf{(c)} We wish to determine the singular points of $f(z) = \dfrac{z^2 + 1}{(z+2)
-(z^2 + 2z + 2)}$. The singular points are $z=-2, 1 \pm i$. 
+(z^2 + 2z + 2)}$. 
+Again, with the same reasoning through the quotient rule, we have that
+the singular points are $z=-2, 1 \pm i$, and $f(z)$ is analytic everywhere else. 
 
 
 \end{solution}
@@ -183,7 +189,7 @@ The singular points are $z = 1,2$.
 The terms $| \mathrm{exp}(2z + i) |$ and $| \mathrm{exp}(iz^2 )|$ can be written as
 \eQnb \label{eq:xy}
 |\mathrm{exp}(2z + i) | = |\mathrm{exp}(2x + i(2y+1) ) | = e^{2x} \\
-|\mathrm{exp}(iz^2) = |\mathrm{exp}(-2xy + i(x^2 - y^2))| = e^{2xy}.
+|\mathrm{exp}(iz^2) = |\mathrm{exp}(-2xy + i(x^2 - y^2))| = e^{-2xy}.
 \eQne
 
 By the triangle-inequality, we have that 
@@ -320,7 +326,14 @@ $\sum_{k=0}^{\infty} -\dfrac{1}{(2k-1)(2k-1)}$ converges absolutely.
 Thus, the given series is
 convergent for $z = 1$ and $-1$. \\
 
-For $z = i$, 
+For $z = i$, notice that the given series can be simplified as
+\eQb
+\sum_{k=1}^{\infty} \dfrac{(-1)^k}{k}i^{k(k+1)} &=&
+\sum_{k=1}^{\infty} (-1)^k(\dfrac{1}{2k} - \dfrac{1}{2k-1}). 
+\eQe
+Hence, the series is an alternating harmonic series, which converges. Thus, the given
+series is convergent for $z = i$. Note that this technique could be applied to $z = 1,-1$ cases as well.
+$\qed$
 \end{solution}
 
 \bigskip
@@ -334,18 +347,20 @@ We wish to find the radius of convergence of the power series
 \eQe
 
 Let $s_k$ denote the $k$th term of the above power series. From the root test,
-we know that a series $\sum_{k=1}^{\infty}$ converges if $\underset{k \to \infty}{\limsup}
+we know that a series $\sum_{k=1}^{\infty} s_k $ converges if $\underset{k \to \infty}{\limsup}
 |s_k|^{\frac{1}{k}} < 1$ and diverges if $\underset{k \to \infty}{\limsup} |s_k|^{\frac{1}{k}}
 > 1$. We proceed to compute $\underset{k \to \infty}{\limsup} | s_k |^{\frac{1}{k}}$.
-\eQb
+\eQnb
 \underset{k \to \infty}{\limsup} | s_k |^{\frac{1}{k}} &=& 
-\underset{k \to \infty}{\limsup} |\dfrac{k^2}{4^k + 5k}z^k|^{\frac{1}{k}} \\
+\underset{k \to \infty}{\limsup} (\dfrac{k^2}{4^k + 5k}z^k)^{\frac{1}{k}} \nonumber \\
 &=& \underset{k \to \infty}{\limsup} 
-|\dfrac{k^2}{4^k + 5k}|^{\frac{1}{k}}|z^k|^{\frac{1}{k}} \\
-&=& |z| \underset{k \to \infty}{\limsup} |(\dfrac{k^2}{4^k + 5k})^{\frac{1}{k}}| \\
+|\dfrac{k^2}{4^k + 5k}|^{\frac{1}{k}}|z^k|^{\frac{1}{k}} \nonumber \\
+&=& |z| \underset{k \to \infty}{\limsup} (\dfrac{k^2}{4^k + 5k})^{\frac{1}{k}} \nonumber \\
 &=& \dfrac{1}{4} |z|.
-\eQe
-
+\eQne
+For the sake of completeness, we should note that, the equation,
+$\underset{k \to \infty}{\limsup} (\dfrac{k^2}{4^k + 5k})^{\frac{1}{k}} = \dfrac{1}{4}$,
+can be rigorously proven by taking the log of the sequence, and using L'hopital's rule.
 For $|z| < 4$, we have that $\underset{k \to \infty}{\limsup} |s_k|^{\frac{1}{k}}
 = \dfrac{1}{4}|z| < 1$. Hence, the series converges when $|z| < 4$.
 For $|z| > 4$, we have that $\underset{k \to \infty}{\limsup} |s_k|^{\frac{1}{k}}
