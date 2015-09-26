@@ -1,0 +1,303 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips14submit_e,times}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\def\eQb#1\eQe{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\eQnb#1\eQne{\begin{eqnarray}#1\end{eqnarray}}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\providecommand{\pb}[0]{\pagebreak}
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+
+\def\Qb#1\Qe{\begin{question}#1\end{question}}
+\def\Sb#1\Se{\begin{solution}#1\end{solution}}
+
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newtheoremstyle{quest}{\topsep}{\topsep}{}{}{\bfseries}{}{ }{\thmname{#1}\thmnote{ #3}.}
+\theoremstyle{quest}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{question}{Question}
+\newtheorem*{preposition}{Preposition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{challengeproblem}{Challenge Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+\usepackage{verbatimbox}
+\usepackage{listings}
+\title{Complex Analysis I: \\
+Problem Set I}
+
+
+\author{
+Youngduck Choi \\
+CILVR Lab \\
+New York University\\
+\texttt{yc1104@nyu.edu} \\
+}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+This work contains the solutions to the problem set I
+of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
+\end{abstract}
+
+\begin{question}[1. Brown p.79-1]
+\end{question}
+\begin{solution}
+The Cauchy-Riemann equation in polar coordinates can be given by
+\eQb
+u_{\theta} = -rv_r \text{ and } ru_r = v_{\theta}. 
+\eQe
+Differentiating the first equation with respect to the $\theta$ parameter, we obtain
+\eQnb
+u_{\theta \theta} &=& - rv_{r\theta}. 
+\eQne
+Differentiating the second equation with respect to the $r$ parameter, we have
+\eQnb
+v_{\theta r} &=& u_{r} + ru_{rr}.
+\eQne
+Multiplying $(2)$ by $r$ and subtracting with $(1)$, we obtain
+\eQb
+-u_{\theta \theta} + rv_{\theta r} = rv_{r\theta} +  ru_{rr} + r^2u_{rr}.
+\eQe
+As $v_{r \theta} = v_{\theta r}$ by Fubini's theorem, we obtain
+\eQb
+r^2u_{rr} + ru_r + u_{\theta \theta} &=& 0.
+\eQe
+Therefore, we have derived the polar form
+of Laplace's equation. Now, we wish to verify that the same equation holds for $v$.
+Consider the expression $r^2v_{rr} + rv_{r} + v_{\theta \theta}$. Differentiating 
+$v_r = -\dfrac{1}{r}u_{\theta}$ with respect to $r$, we have 
+\eQb
+v_{rr} = \dfrac{1}{r^2}u_{\theta} - \dfrac{1}{r}u_{\theta r}.
+\eQe
+Differentiating $v_{\theta} = ru_r$ with respect to $\theta$, we have
+\eQb
+v_{\theta \theta} = ru_{r \theta}.
+\eQe
+Substituting the last two equations into the considered expression, we have
+\eQb
+u_{\theta} - ru_{\theta r} + u_{\theta} + ru_{r\theta},
+\eQe
+which again by Fubini equals $0$. $\qed$
+\end{solution}
+
+\pagebreak
+
+\begin{question}[1-2. Brown p.79-2]
+\end{question}
+\begin{solution}
+Let the function $f(z) = u(x,y) + iv(x,y)$ be analytic on a domain $D$,
+and consider a point $z_0 = (x_0, y_0) = (c_1, c_2)$. Assume that $f'(z_0) \neq 0$.
+For the level curve of $u(x,y) = c_1$, by implicit differentiation
+with respect to $x$, we obtain 
+\eQb
+u_x + u_y \dfrac{dy}{dx} = 0. 
+\eQe
+As $f'(z_0) \neq 0$, the above equation can be simplified to 
+\eQb
+\dfrac{dy}{dx} = -\dfrac{u_x}{u_y}.
+\eQe
+Analogously, for the corresponding 
+level curve of $v(x,y) = c_2$, by implicit differentiation
+with respect to $x$, we obtain
+\eQb
+v_x + v_y \dfrac{dy}{dx} &=& 0,
+\eQe
+As $f'(z_0) \neq 0$, the above equation can be simplified to 
+\eQb
+\dfrac{dy}{dx} &=& -\dfrac{v_x}{v_y}.
+\eQe
+Now, as the function is analytic in a domain $D$, the Cauchy-Riemann equation must hold 
+at $z_0$. Hence, the last equation can be extened as
+\eQb
+\dfrac{dy}{dx} &=& -\dfrac{v_x}{v_y} = \dfrac{u_y}{u_x}. 
+\eQe
+Therefore, we have shown that the level curves of the component functions
+at the analytic domain $D$ are orthogonal. $\qed$
+\end{solution}
+
+\bigskip
+
+
+\begin{question}[1-3. Brown p.79-4]
+\end{question}
+\begin{solution}
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[2. Conjugate Harmonic Function]
+\end{question}
+\begin{solution}
+We are given a polynomial of the following form:
+\eQb
+u(x,y) &=& ax^3 + bx^{2}y + cxy^{2} + dy^{3}.
+\eQe
+Differentiating the given polynomial $u(x,y)$ with respect to $x$ and $y$ variables, we obtain
+\eQb
+\dfrac{\partial u}{\partial x} = 3ax^2 + 2byx + cy^{2}, \\ 
+\dfrac{\partial^2 u}{\partial x^2} = 6ax + 2by, \\ 
+\dfrac{\partial u}{\partial y} = 3dy^2 + 2cxy + bx^{2}, \\ 
+\dfrac{\partial^2 u}{\partial y^2} = 6dy + 2cx. \\ 
+\eQe
+As the given polynomial is harmonic, $\dfrac{\partial^2 u}{\partial x^2} + 
+\dfrac{\partial^2 u}{\partial y^2} = 0$ must hold for all $x$ and $y$.
+Hence, we obtain
+\eQb
+6ax + 2by + 6dy + 2cx = 0,
+\eQe
+which simplifies to 
+\eQb
+(3a + c)x + (3d + b)y = 0,
+\eQe
+for all $x$ and $y$. As the above equation
+must hold for all $x$ and $y$, we have that
+\eQb
+c = -3a \text{ and } b = -3d.
+\eQe
+Substituting the above equations into the original polynomial, we obtain the 
+most general harmonic polynomial of the given form as 
+\eQb
+u(x,y) = ax^3 - 3dx^2y - 3axy^2 + dy^3.
+\eQe
+Now, we wish to compute the conjugate harmonic function of $u(x,y)$, denoted by $v(x,y)$.
+From the Cauchy-Riemann equations, we have
+\eQb
+\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y} = 3ax^2 + 2byx + cy^2, \\
+\dfrac{\partial u}{\partial y} = -\dfrac{\partial v}{\partial x} = 3dy^2 + 2cxy + bx^2.
+\eQe
+Simplifying for the $v(x,y)$ term, we have
+\eQb
+\dfrac{\partial v}{\partial y} = 3ax^2 + 2byx + cy^2, \\
+\dfrac{\partial v}{\partial x} = -(3dy^2 + 2cxy + bx^2).
+\eQe
+By taking the integral, we can solve for $v(x,v)$, and obtain
+\eQb
+v(x,y) &=& \dfrac{1}{3}cy^3 - \dfrac{1}{3}bx^3 + bxy^2 - cx^2y 
+\eQe
+
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[3. The Complex Chain Rule]
+\end{question}
+\begin{solution}
+\end{solution}
+
+\bigskip
+
+\begin{question}[4. $|f(z)| = 1$ implies constant $f$]
+\end{question}
+\begin{solution}
+Let $D$ be a unit disk, and $f:D \to \mathbb{C}$ be a holomorphic function such that
+$|f(z)| = 1$ for $z \in D$. Notice that $|f|$ is also a holomorhpic function, which
+can be re-written as $u(x,y) + iv(x,y)$. As $|f(z)| = 1$ for all $z \in D$, we obtain that
+$u^2 + v^2 = 1$ for all $(x,y) \in D$.
+Taking the partials, we obtain
+\eQb
+2uu_x + 2vv_x = 0 &\text{ and } &
+2uu_y + 2vv_y = 0.
+\eQe
+As $f$ is holomorphic, from the Cauchy-Riemann equation, we have that
+\eQb
+u_x = v_y &\text{ and } & u_y = -v_x. 
+\eQe
+Substituting the above equations to the partial equations and simplifying, 
+we obtain
+\eQb
+uv_y + vv_x = 0 &\text{ and} & -uv_x + vv_y = 0, \\
+u^2{v_y}^2 + v^2{v_x}^2 + 2uvv_xv_y = 0 &\text{ and }& u^2{v_x}^2 + v^2{v_y}^2 - 2uvv_x v_y. \\
+\eQe
+Hence, by adding the last two equations together, and factoring, we obtain
+\eQb
+(u^2 + v^2)({v_x}^2 + {v_y}^2) = 0.
+\eQe
+Since $|f| = 1$, $(u^2 + v^2)$ term cannot be $0$, and we obtain that
+$v_x = 0$ and $v_y = 0$. By Cauchy-Riemann equation, we also have $u_x = 0$ and $u_y = 0$.
+Thus, using the Cauchy-Riemann theorem, $f'(z)$ for $z \in D$ can be written as
+\eQb
+f'(z) &=& u_x + iv_x \\ 
+&=& 0.
+\eQe
+Hence, $f'(z) = 0$ for all $z \in D$, and $f$ is a constant function. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[5. Harmonic Functions]
+\end{question}
+\begin{solution}
+Let $u$ and $v$ be real harmonic function on the unit disk, and $f$ be a holomorphic
+function on the unit disk. As $u$ and $v$ are harmonic, we have
+\eQb
+u_{xx} + u_{yy} = 0 &\text{ and }&
+v_{xx} + v_{yy} = 0, 
+\eQe
+for all points on the unit disk. \\
+
+\smallskip
+
+\textbf{(i)} Assume that $u^2$ is harmonic. By using the chain rule, we can write $u^2_{xx}$
+and $u^2_{yy}$ in terms of $u_x$ and $u_y$ respectively as 
+\eQb
+u^2_{xx} = 2(u_x u_x + uu_{xx}) &\text{ and } & u^2_{yy} = 2(u_y u_y + uu_{yy}).
+\eQe
+As $u^2$ is harmonic, we obtain
+\eQb
+2(u_x u_x + uu_{xx}) + 2(u_y u_y + uu_{yy}) &=& 0, \\
+\eQe
+which can be simplified and re-arranged to 
+\eQb
+u(u_{xx} + u_{yy}) + (u_x u_x + u_y u_y) &=& 0. 
+\eQe
+As $u_{xx} + u_{yy} = 0$, we finally obtain
+\eQb
+u_x u_x + u_y u_y &=& 0.
+\eQe
+Hence, $u_{x} = 0$, $u_{y} = 0$, and $u$ is a constant function. $\qed$ 
+
+\smallskip
+
+\textbf{(ii)} 
+              
+\end{solution}
+
+\end{document}
