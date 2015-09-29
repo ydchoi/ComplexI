@@ -41,7 +41,7 @@
 \usepackage{verbatimbox}
 \usepackage{listings}
 \title{Complex Analysis I: \\
-Problem Set I}
+Problem Set III}
 
 
 \author{
@@ -71,233 +71,293 @@ New York University\\
 \maketitle
 
 \begin{abstract}
-This work contains the solutions to the problem set I
+This work contains the solutions to the problem set III
 of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \end{abstract}
 
-\begin{question}[1. Brown p.79-1]
+\bigskip
+
+\begin{question}[1. Brown p.95-4]
 \end{question}
 \begin{solution}
-The Cauchy-Riemann equation in polar coordinates can be given by
+We are given the following branch:
 \eQb
-u_{\theta} = -rv_r \text{ and } ru_r = v_{\theta}. 
+log(z) &=& ln(r) + i\theta \> \text{ and } \> r > 0 , \dfrac{3\pi}{4} < \theta < \dfrac{11\pi}{4}.
 \eQe
-Differentiating the first equation with respect to the $\theta$ parameter, we obtain
-\eQnb
-u_{\theta \theta} &=& - rv_{r\theta}. 
-\eQne
-Differentiating the second equation with respect to the $r$ parameter, we have
-\eQnb
-v_{\theta r} &=& u_{r} + ru_{rr}.
-\eQne
-Multiplying $(2)$ by $r$ and subtracting with $(1)$, we obtain
+With the given branch, the computations yield
 \eQb
--u_{\theta \theta} + rv_{\theta r} = rv_{r\theta} +  ru_{rr} + r^2u_{rr}.
+log(i^2) &=& log(-1) = ln(1) + i\pi \\
+2log(i) &=& 2(ln(1) +i \dfrac{5\pi}{2}) = i\dfrac{5\pi}{2}.
 \eQe
-As $v_{r \theta} = v_{\theta r}$ by Fubini's theorem, we obtain
-\eQb
-r^2u_{rr} + ru_r + u_{\theta \theta} &=& 0.
-\eQe
-Therefore, we have derived the polar form
-of Laplace's equation. Now, we wish to verify that the same equation holds for $v$.
-Consider the expression $r^2v_{rr} + rv_{r} + v_{\theta \theta}$. Differentiating 
-$v_r = -\dfrac{1}{r}u_{\theta}$ with respect to $r$, we have 
-\eQb
-v_{rr} = \dfrac{1}{r^2}u_{\theta} - \dfrac{1}{r}u_{\theta r}.
-\eQe
-Differentiating $v_{\theta} = ru_r$ with respect to $\theta$, we have
-\eQb
-v_{\theta \theta} = ru_{r \theta}.
-\eQe
-Substituting the last two equations into the considered expression, we have
-\eQb
-u_{\theta} - ru_{\theta r} + u_{\theta} + ru_{r\theta},
-\eQe
-which again by Fubini equals $0$. $\qed$
+Hence, we have that $log(i^2) = 2log(i)$ for this particular branch. $\qed$
 \end{solution}
 
-\pagebreak
 
-\begin{question}[1-2. Brown p.79-2]
+
+\bigskip
+
+\begin{question}[2. Brown p.95-11]
 \end{question}
 \begin{solution}
-Let the function $f(z) = u(x,y) + iv(x,y)$ be analytic on a domain $D$,
-and consider a point $z_0 = (x_0, y_0) = (c_1, c_2)$. Assume that $f'(z_0) \neq 0$.
-For the level curve of $u(x,y) = c_1$, by implicit differentiation
-with respect to $x$, we obtain 
+We wish to show that $ln(x^2 + y^2)$ is harmonic.
+Firstly, we can compute the partials as follow: 
 \eQb
-u_x + u_y \dfrac{dy}{dx} = 0. 
+u_x &=& \dfrac{2x}{x^2 + y^2} \\
+u_{xx} &=& \dfrac{2y^2 - 2x^2}{(x^2 + y^2)^2}, \\
 \eQe
-As $f'(z_0) \neq 0$, the above equation can be simplified to 
+for $x,y \neq 0$.
+By symmtry, we also have
 \eQb
-\dfrac{dy}{dx} = -\dfrac{u_x}{u_y}.
+u_y &=& \dfrac{2y}{x^2 + y^2} \\
+u_{yy} &=& \dfrac{2x^2 - 2y^2}{(x^2 + y^2)^2}, \\
 \eQe
-Analogously, for the corresponding 
-level curve of $v(x,y) = c_2$, by implicit differentiation
-with respect to $x$, we obtain
-\eQb
-v_x + v_y \dfrac{dy}{dx} &=& 0,
-\eQe
-As $f'(z_0) \neq 0$, the above equation can be simplified to 
-\eQb
-\dfrac{dy}{dx} &=& -\dfrac{v_x}{v_y}.
-\eQe
-Now, as the function is analytic in a domain $D$, the Cauchy-Riemann equation must hold 
-at $z_0$. Hence, the last equation can be extened as
-\eQb
-\dfrac{dy}{dx} &=& -\dfrac{v_x}{v_y} = \dfrac{u_y}{u_x}. 
-\eQe
-Therefore, we have shown that the level curves of the component functions
-at the analytic domain $D$ are orthogonal. $\qed$
+for $x,y \neq 0$. Hence, we have that $u_{xx} + u_{yy} = 0$ for $x,y \neq 0$,
+and consequently $ln(x^2+y^2)$ is harmonic. Now, we show that $ln(x^2+y^2)$ is harmonic
+in a different way. 
 \end{solution}
 
 \bigskip
 
-
-\begin{question}[1-3. Brown p.79-4]
+\begin{question}[3. Brown p.103-1]
 \end{question}
 \begin{solution}
-
+We can re-write the expression $(1+i)^{i}$ as
+\eQb
+(1+i)^{i} &=& \exp{(i\ln(1+i))} \\ 
+&=& \exp{(i(\ln(\sqrt{2}) + i(\dfrac{\pi}{4}+ 2\pi n)))} \\
+&=& \exp{(-\dfrac{\pi}{4} - 2\pi n)} \exp{(i(\dfrac{\ln(2)}{2}))} \\
+&=& \exp{(-\dfrac{\pi}{4} + 2\pi n)} \exp{(i(\dfrac{\ln(2)}{2}))}
+\eQe
+for $n = 0, \pm 1, \pm 2, ...$ . Now, we can also re-write the expression $\dfrac{1}{i^{2i}}$
+as 
+\eQb
+\dfrac{1}{i^{2i}} &=& e^{-2i} \\
+&=& e^{-2i\log(i)} \\
+&=& \exp{(-2i(\ln(1) + i(\dfrac{\pi}{2} + 2n\pi))} \\
+&=& \exp{((4n+1)\pi)},
+\eQe 
+for $n = 0, \pm 1, \pm 2, ...$ as desired. $\qed$
 \end{solution}
 
 \bigskip
 
-\begin{question}[2. Conjugate Harmonic Function]
+\begin{question}[4. Brown p.133-3]
 \end{question}
 \begin{solution}
-We are given a polynomial of the following form:
+We are given a function $f(z) = \pi \exp{(\pi\bar{z})}$, contour $C$ as the boundary of
+the square with vertices at the points $0, 1, 1 + i, i$, and the orientation of $C$
+being the counter-clockwise direction. Separating the integral with 4 different legs, we have
 \eQb
-u(x,y) &=& ax^3 + bx^{2}y + cxy^{2} + dy^{3}.
+\int_{C} \pi \exp{(\pi \bar{z})} dz &=&
+\int_{C_1} \pi \exp{(\pi \bar{z})} dz +
+\int_{C_2} \pi \exp{(\pi \bar{z})} dz \\ 
+&+&
+\int_{C_3} \pi \exp{(\pi \bar{z})} dz +
+\int_{C_4} \pi \exp{(\pi \bar{z})} dz, 
 \eQe
-Differentiating the given polynomial $u(x,y)$ with respect to $x$ and $y$ variables, we obtain
+where the legs can be written as 
 \eQb
-\dfrac{\partial u}{\partial x} = 3ax^2 + 2byx + cy^{2}, \\ 
-\dfrac{\partial^2 u}{\partial x^2} = 6ax + 2by, \\ 
-\dfrac{\partial u}{\partial y} = 3dy^2 + 2cxy + bx^{2}, \\ 
-\dfrac{\partial^2 u}{\partial y^2} = 6dy + 2cx. \\ 
+C_1 : z &=& x (0 \leq x \leq 1) \\
+C_2 : z &=& 1+ iy (0 \leq y \leq 1) \\
+C_3 : z &=& 1-x + i (0 \leq x \leq 1) \\ 
+C_4 : z &=& i(1-y) (0 \leq y \leq 1).
 \eQe
-As the given polynomial is harmonic, $\dfrac{\partial^2 u}{\partial x^2} + 
-\dfrac{\partial^2 u}{\partial y^2} = 0$ must hold for all $x$ and $y$.
-Hence, we obtain
+Simplifying the leg integrals with their particular values, we obtain
 \eQb
-6ax + 2by + 6dy + 2cx = 0,
+\int_{C_1} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi x)} dx \\
+&=& e^{\pi} - 1 \\
+\int_{C_2} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi (1-iy))} dy \\
+&=& 2e^{\pi} \\
+\int_{C_3} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi (1-x-i))} dx \\
+&=& e^{\pi} - 1 \\
+\int_{C_4} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi i(y-1))} dy \\
+&=& -2. 
 \eQe
-which simplifies to 
+Hence, adding them up, we obtain
 \eQb
-(3a + c)x + (3d + b)y = 0,
+\int_{C} \pi e^{\pi \bar{z}} dz = 4(e^\pi -1),
 \eQe
-for all $x$ and $y$. As the above equation
-must hold for all $x$ and $y$, we have that
-\eQb
-c = -3a \text{ and } b = -3d.
-\eQe
-Substituting the above equations into the original polynomial, we obtain the 
-most general harmonic polynomial of the given form as 
-\eQb
-u(x,y) = ax^3 - 3dx^2y - 3axy^2 + dy^3.
-\eQe
-Now, we wish to compute the conjugate harmonic function of $u(x,y)$, denoted by $v(x,y)$.
-From the Cauchy-Riemann equations, we have
-\eQb
-\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y} = 3ax^2 + 2byx + cy^2, \\
-\dfrac{\partial u}{\partial y} = -\dfrac{\partial v}{\partial x} = 3dy^2 + 2cxy + bx^2.
-\eQe
-Simplifying for the $v(x,y)$ term, we have
-\eQb
-\dfrac{\partial v}{\partial y} = 3ax^2 + 2byx + cy^2, \\
-\dfrac{\partial v}{\partial x} = -(3dy^2 + 2cxy + bx^2).
-\eQe
-By taking the integral, we can solve for $v(x,v)$, and obtain
-\eQb
-v(x,y) &=& \dfrac{1}{3}cy^3 - \dfrac{1}{3}bx^3 + bxy^2 - cx^2y 
-\eQe
-
+as desired. $\qed$
 
 \end{solution}
 
 \bigskip
 
-\begin{question}[3. The Complex Chain Rule]
+\begin{question}[5. Brown p.133-8]
 \end{question}
 \begin{solution}
 \end{solution}
 
 \bigskip
 
-\begin{question}[4. $|f(z)| = 1$ implies constant $f$]
+\begin{question}[6. Brown p.138-1]
 \end{question}
 \begin{solution}
-Let $D$ be a unit disk, and $f:D \to \mathbb{C}$ be a holomorphic function such that
-$|f(z)| = 1$ for $z \in D$. Notice that $|f|$ is also a holomorhpic function, which
-can be re-written as $u(x,y) + iv(x,y)$. As $|f(z)| = 1$ for all $z \in D$, we obtain that
-$u^2 + v^2 = 1$ for all $(x,y) \in D$.
-Taking the partials, we obtain
+\textbf{(a)} We wish to show that $|\int_{C} \dfrac{z+4}{z^3 - 1} dz | \leq \dfrac{6\pi}{7}$,
+where $C$ is a quarter circle from $2$ to $2i$.
+We have the length of the contour is $\pi$. 
+Now, we compute the upper bound of $|f(z)|$ along the contour: 
 \eQb
-2uu_x + 2vv_x = 0 &\text{ and } &
-2uu_y + 2vv_y = 0.
+\left| \dfrac{z+4}{z^3 -1 } \right| &=& \dfrac{|z+4|}{|z^3 - 1|}.
 \eQe
-As $f$ is holomorphic, from the Cauchy-Riemann equation, we have that
+By the triangle inequality, we have
 \eQb
-u_x = v_y &\text{ and } & u_y = -v_x. 
+|z+4| \leq |z| + |4| = 6.
 \eQe
-Substituting the above equations to the partial equations and simplifying, 
-we obtain
+Again, by the triangle inequality, we have
 \eQb
-uv_y + vv_x = 0 &\text{ and} & -uv_x + vv_y = 0, \\
-u^2{v_y}^2 + v^2{v_x}^2 + 2uvv_xv_y = 0 &\text{ and }& u^2{v_x}^2 + v^2{v_y}^2 - 2uvv_x v_y. \\
+|z^3 - 1| \geq |z^3| - |1| = |z|^3 - 1 = 8 - 1 = 7.
 \eQe
-Hence, by adding the last two equations together, and factoring, we obtain
+It follows that
+\eQb 
+\dfrac{1}{|z^3 - 1|}  \leq \dfrac{1}{7}.
+\eQe
+Consequently, combining the two inequalities yields 
 \eQb
-(u^2 + v^2)({v_x}^2 + {v_y}^2) = 0.
+\left| \dfrac{z+4}{z^3 -1} \right| \leq \dfrac{6}{7}.
 \eQe
-Since $|f| = 1$, $(u^2 + v^2)$ term cannot be $0$, and we obtain that
-$v_x = 0$ and $v_y = 0$. By Cauchy-Riemann equation, we also have $u_x = 0$ and $u_y = 0$.
-Thus, using the Cauchy-Riemann theorem, $f'(z)$ for $z \in D$ can be written as
+Since $f$ is piece-wise continous on $C$, we have 
 \eQb
-f'(z) &=& u_x + iv_x \\ 
-&=& 0.
+\left| \int_{C} \dfrac{z+}{z^3 - 1} dz \right|  \leq \dfrac{6\pi}{7},
 \eQe
-Hence, $f'(z) = 0$ for all $z \in D$, and $f$ is a constant function. $\qed$
-\end{solution}
-
-\bigskip
-
-\begin{question}[5. Harmonic Functions]
-\end{question}
-\begin{solution}
-Let $u$ and $v$ be real harmonic function on the unit disk, and $f$ be a holomorphic
-function on the unit disk. As $u$ and $v$ are harmonic, we have
-\eQb
-u_{xx} + u_{yy} = 0 &\text{ and }&
-v_{xx} + v_{yy} = 0, 
-\eQe
-for all points on the unit disk. \\
+as desired. 
 
 \smallskip
 
-\textbf{(i)} Assume that $u^2$ is harmonic. By using the chain rule, we can write $u^2_{xx}$
-and $u^2_{yy}$ in terms of $u_x$ and $u_y$ respectively as 
+\textbf{(b)} We wish to show that 
+$\left| \int_{C} \dfrac{dz}{z^2 -1} \right| \leq \dfrac{\pi}{3}$, where
+$C$ is a quarter circle from $2$ to $2i$. 
+The length of the contour as $\pi$. We now compute the upper bound
+of $|f(z)|$ along the contour, which can be written as $\left| \dfrac{1}{z^2-1} \right|$.
+By the triangle inequality, we have
 \eQb
-u^2_{xx} = 2(u_x u_x + uu_{xx}) &\text{ and } & u^2_{yy} = 2(u_y u_y + uu_{yy}).
+|z^2 - 1| \geq |z^2| - |1| = 4 - 1 = 3.
 \eQe
-As $u^2$ is harmonic, we obtain
+Hence, we have
 \eQb
-2(u_x u_x + uu_{xx}) + 2(u_y u_y + uu_{yy}) &=& 0, \\
-\eQe
-which can be simplified and re-arranged to 
+\left| \dfrac{1}{z^2 -1} \right| = \dfrac{1}{\left| z^2 -1 \right|} \leq \dfrac{1}{3}. 
+\eQe 
+Since $f$ is piece-wise continuous on $C$, we have
 \eQb
-u(u_{xx} + u_{yy}) + (u_x u_x + u_y u_y) &=& 0. 
-\eQe
-As $u_{xx} + u_{yy} = 0$, we finally obtain
-\eQb
-u_x u_x + u_y u_y &=& 0.
-\eQe
-Hence, $u_{x} = 0$, $u_{y} = 0$, and $u$ is a constant function. $\qed$ 
+\left| \int_{C} \dfrac{dz}{z^2 -1} \right| \leq \dfrac{\pi}{3}, 
+\eQe 
+as desired. $\qed$
 
-\smallskip
-
-\textbf{(ii)} 
-              
 \end{solution}
+
+\bigskip
+
+\begin{question}[7. Brown p.138-2]
+\end{question}
+\begin{solution}
+We wish to show that $\left| \int_{C}  \dfrac{dz}{z^4} \right| \leq 4\sqrt{2}$, where
+$C$ is a straight line from $i$ to $1$. The contour length is $\sqrt{2}$.
+Observe that of all the points on the line segment, the midpoint is the closest to the origin,
+that distance being $d = \dfrac{\sqrt{2}}{2}$. Hence, we obtain
+\eQb
+|z| \geq \dfrac{\sqrt{2}}{2}.
+\eQe
+Consequently, it follows that 
+\eQb
+|z|^4 \geq \dfrac{1}{4} \text { and } \dfrac{1}{|z|^4} \leq 4.
+\eQe
+Since $f$ is piece-wise continuous on $C$, we have 
+\eQb
+\left| \int_{C} \dfrac{dz}{z^4} \right| \leq 4\sqrt{2}, 
+\eQe
+as desired. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[8. Brown p.138-3]
+\end{question}
+\begin{solution}
+We wish to show that $\left| \int_{C} (e^z - \bar{z}) dz \right| \leq 60$, where $C$ is the
+boundary of the triangle with vertices at the points $0$, $3i$, and $-4$. Notice that
+the contour length is simply $12$, as the triangle is a $3-4-5$ triangle. Now, we wish to 
+compute an upper bound of $|f(z)|$ along the contour. Observe that
+\eQb
+|e^z - \bar{z}| \leq e^x + \sqrt{x^2 + y^2}, 
+\eQe  
+where $z = x + iy$. As $x \leq 0$, we have that $e^x \leq 1$. Furthermore, 
+\end{solution}
+
+\bigskip
+
+\begin{question}[9. Brown p.138-5]
+\end{question}
+\begin{solution}
+We wish to show the following inequality:
+\eQb
+\left| \int_{C_R} \dfrac{\log(z)}{z^2} dz \right| \leq
+2\pi(\dfrac{\pi + \ln(R)}{R}),
+\eQe
+where $C_R$ denotes the contour along the circle $|z| = R (R>1)$. Hence, the length of the contour
+is simply $2\pi R$. Now, we compute an upper bound of $\left| \dfrac{\log(z)}{z^2} \right|$ along
+the contour. Basic algebraic manipulations and using triangle inequality, we have
+\eQb
+\left| \dfrac{\log(z)}{z^2} \right| &=& \dfrac{| \log(z) |}{|z^2|} = \dfrac{|\ln(R) + i\theta|}{R^2} \\
+&\leq& \dfrac{\ln(R) + |\theta|}{R^2} \leq \dfrac{\ln(R) + \pi}{R^2}, 
+\eQe 
+as $-\pi \leq \theta \leq \pi$. Since the given function is piecewise continuous on $C$, we obtain 
+\eQb
+\left| \int_{C_R} \dfrac{\log(z)}{z^2} dz \right| \leq
+2\pi(\dfrac{\pi + \ln(R)}{R}),
+\eQe
+as desired. By using the l'Hospital's rule. we have
+\eQb
+\underset{R \to \infty}{\lim} 2\pi(\dfrac{\pi + \ln(R)}{R}) &=& 
+\underset{R \to \infty}{\lim} \dfrac{1}{R} = 0.
+\eQe
+Therefore, as $R \to \infty$ the upper bound of the absolute value of the integral tends to $0$.
+Consequently, we see that the integral must tend to $0$ as well. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[10. Brown p.138-8]
+\end{question}
+\begin{solution}
+\textbf{(a)} 
+On the vertical side of the square, we have $ x = (N + \dfrac{1}{2})\pi$. Therefore, 
+$\mathrm{sin}(x) = -1$ or $1$. Hence, as we have $|\mathrm{sin}(z)| \geq |\mathrm{sin}(x)|$,
+we obtain $|\mathrm{sin}(z)| \geq 1$. On the horizontal side of the square, we have
+$y = (N + \dfrac{1}{2})\pi$. Therefore, $\mathrm{sinh}(y) = \mathrm{sinh}(\pm \dfrac{1}{2}\pi)$.
+Hence, as we have $|\mathrm{sin}(z)| \geq |\mathrm{sinh}(y)|$, we obtain 
+$|\mathrm{sin}(z)| \geq |\mathrm{sinh}(\dfrac{\pi}{2})|$. Cosnequently, there is a positive constant $A$,
+independent of $N$, such that $|\mathrm{sin}(z)| \leq A$ for all points $z$ lying on the contour
+$C_N$.
+
+\bigskip
+ 
+\textbf{(b)} We wish to show that 
+$\left| \int_{C_N} \dfrac{1}{z^2 sin(z)} dz \right| 
+\leq \dfrac{16}{(2N+1)\pi A}$.
+ The length of the $C_N$ contour is $8(N+\frac{1}{2})\pi$. Now,
+we compute an upper bound of $\left| \dfrac{1}{z^2 sin(z)} \right|$ along the contour.
+We have that $|z^2| \geq ((N+\frac{1}{2})\pi)^2$ and $|sin(z)| \geq A$ on $C_N$. 
+It follows that
+\eQb
+\left| \dfrac{1}{z^2 sin(z)} \right| &=& \dfrac{1}{|z^2||sin(z)|} \\
+&\leq& \dfrac{1}{((N+\frac{1}{2})\pi)^2 A},
+\eQe
+holds on $C_N$. Therfore, as $\dfrac{1}{z^2 sin(z)}$ is piece-wise continuous, we have
+\eQb
+\left| \int_{C_N} \dfrac{1}{z^2 sin(z)} dz \right| &\leq& \dfrac{8(N+\frac{1}{2})\pi}
+{((N+\frac{1}{2})\pi)^2 A} \\ 
+&=& \dfrac{16}{(2N+1)\pi A},
+\eQe
+as desired. $\qed$
+
+\end{solution}
+
 
 \end{document}
+
+
+
