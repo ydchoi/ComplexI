@@ -113,7 +113,20 @@ u_{yy} &=& \dfrac{2x^2 - 2y^2}{(x^2 + y^2)^2}, \\
 \eQe
 for $x,y \neq 0$. Hence, we have that $u_{xx} + u_{yy} = 0$ for $x,y \neq 0$,
 and consequently $ln(x^2+y^2)$ is harmonic. Now, we show that $ln(x^2+y^2)$ is harmonic
-in a different way. 
+in a different way. Using the polar cordinats, we have $f = ln(r^2)$, 
+excluding the origin. Computing the partials
+yields
+\eQb
+f_r &=& \dfrac{2}{r} \\
+f_{rr} &=& \dfrac{-2}{r^2} \\
+f_{\theta \theta} &=& 0.
+\eQe
+It follows that
+\eQb
+f_{rr} = \dfrac{1}{r}f_r + \dfrac{1}{r^2} f_{\theta theta} &=& \dfrac{-2}{r^2} + \dfrac{1}{r}
+\dfrac{2}{r} + 0 = 0.
+\eQe
+Therefore, the given function is harmonic on $\mathbb{C} \setminus \{ 0 \}$. $\qed$ 
 \end{solution}
 
 \bigskip
@@ -190,6 +203,22 @@ as desired. $\qed$
 \begin{question}[5. Brown p.133-8]
 \end{question}
 \begin{solution}
+We are given that 
+\eQb
+\int_{C} f(z) dz &=& \int_{\theta}f[z(\theta)]z^{'}(\theta). \\ 
+\eQe
+We can compute the inner term of the integral as
+\eQb
+f[z(\theta )] z^{'}(\theta ) = R^{a-}e^{i(a-1)\theta}Rie^{i\theta} d\theta &=& 
+R^{a}ie^{ia \theta} d\theta.
+\eQe
+Hence, the integral can be evaluated as
+\eQb
+\int_{C} f(z) dz &=& \int_{-\pi}^{\pi} R^a i e^{ia \theta } d\theta \\
+&=& \dfrac{R^a}{a}(e^{ia\pi} - e^{-ia\pi}) \\
+&=& i \dfrac{2R^a}{a}sin(a\pi ), 
+\eQe
+as desired. $\qed$
 \end{solution}
 
 \bigskip
@@ -285,6 +314,16 @@ compute an upper bound of $|f(z)|$ along the contour. Observe that
 |e^z - \bar{z}| \leq e^x + \sqrt{x^2 + y^2}, 
 \eQe  
 where $z = x + iy$. As $x \leq 0$, we have that $e^x \leq 1$. Furthermore, 
+$\sqrt{x^2 + y^2} \leq 4$, as the longer side of the triangle from the origin is $4$. Therefore,
+we have 
+\eQb
+|e^z - \bar{z} | \leq 5,
+\eQe 
+and consequently, as $f$ is piecewise continuous, we obtain
+\eQb
+\left| \int_{C} (e^z - \bar{z}) dz \right| \leq 60,
+\eQe
+as desired. $\qed$
 \end{solution}
 
 \bigskip
