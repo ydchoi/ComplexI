@@ -1,0 +1,402 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips14submit_e,times}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\def\eQb#1\eQe{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\eQnb#1\eQne{\begin{eqnarray}#1\end{eqnarray}}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\providecommand{\pb}[0]{\pagebreak}
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+
+\def\Qb#1\Qe{\begin{question}#1\end{question}}
+\def\Sb#1\Se{\begin{solution}#1\end{solution}}
+
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newtheoremstyle{quest}{\topsep}{\topsep}{}{}{\bfseries}{}{ }{\thmname{#1}\thmnote{ #3}.}
+\theoremstyle{quest}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{question}{Question}
+\newtheorem*{preposition}{Preposition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{challengeproblem}{Challenge Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+\usepackage{verbatimbox}
+\usepackage{listings}
+\title{Complex Analysis I: \\
+Problem Set III}
+
+
+\author{
+Youngduck Choi \\
+CILVR Lab \\
+New York University\\
+\texttt{yc1104@nyu.edu} \\
+}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+This work contains the solutions to the problem set III
+of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
+\end{abstract}
+
+\bigskip
+
+\begin{question}[1. Brown p.95-4]
+\end{question}
+\begin{solution}
+We are given the following branch:
+\eQb
+log(z) &=& ln(r) + i\theta \> \text{ and } \> r > 0 , \dfrac{3\pi}{4} < \theta < \dfrac{11\pi}{4}.
+\eQe
+With the given branch, the computations yield
+\eQb
+log(i^2) &=& log(-1) = ln(1) + i\pi \\
+2log(i) &=& 2(ln(1) +i \dfrac{5\pi}{2}) = i\dfrac{5\pi}{2}.
+\eQe
+Hence, we have that $log(i^2) = 2log(i)$ for this particular branch. $\qed$
+\end{solution}
+
+
+
+\bigskip
+
+\begin{question}[2. Brown p.95-11]
+\end{question}
+\begin{solution}
+We wish to show that $ln(x^2 + y^2)$ is harmonic.
+Firstly, we can compute the partials as follow: 
+\eQb
+u_x &=& \dfrac{2x}{x^2 + y^2} \\
+u_{xx} &=& \dfrac{2y^2 - 2x^2}{(x^2 + y^2)^2}, \\
+\eQe
+for $x,y \neq 0$.
+By symmtry, we also have
+\eQb
+u_y &=& \dfrac{2y}{x^2 + y^2} \\
+u_{yy} &=& \dfrac{2x^2 - 2y^2}{(x^2 + y^2)^2}, \\
+\eQe
+for $x,y \neq 0$. Hence, we have that $u_{xx} + u_{yy} = 0$ for $x,y \neq 0$,
+and consequently $ln(x^2+y^2)$ is harmonic. Now, we show that $ln(x^2+y^2)$ is harmonic
+in a different way. Using the polar cordinats, we have $f = ln(r^2)$, 
+excluding the origin. Computing the partials
+yields
+\eQb
+f_r &=& \dfrac{2}{r} \\
+f_{rr} &=& \dfrac{-2}{r^2} \\
+f_{\theta \theta} &=& 0.
+\eQe
+It follows that
+\eQb
+f_{rr} = \dfrac{1}{r}f_r + \dfrac{1}{r^2} f_{\theta theta} &=& \dfrac{-2}{r^2} + \dfrac{1}{r}
+\dfrac{2}{r} + 0 = 0.
+\eQe
+Therefore, the given function is harmonic on $\mathbb{C} \setminus \{ 0 \}$. $\qed$ 
+\end{solution}
+
+\bigskip
+
+\begin{question}[3. Brown p.103-1]
+\end{question}
+\begin{solution}
+We can re-write the expression $(1+i)^{i}$ as
+\eQb
+(1+i)^{i} &=& \exp{(i\ln(1+i))} \\ 
+&=& \exp{(i(\ln(\sqrt{2}) + i(\dfrac{\pi}{4}+ 2\pi n)))} \\
+&=& \exp{(-\dfrac{\pi}{4} - 2\pi n)} \exp{(i(\dfrac{\ln(2)}{2}))} \\
+&=& \exp{(-\dfrac{\pi}{4} + 2\pi n)} \exp{(i(\dfrac{\ln(2)}{2}))}
+\eQe
+for $n = 0, \pm 1, \pm 2, ...$ . Now, we can also re-write the expression $\dfrac{1}{i^{2i}}$
+as 
+\eQb
+\dfrac{1}{i^{2i}} &=& e^{-2i} \\
+&=& e^{-2i\log(i)} \\
+&=& \exp{(-2i(\ln(1) + i(\dfrac{\pi}{2} + 2n\pi))} \\
+&=& \exp{((4n+1)\pi)},
+\eQe 
+for $n = 0, \pm 1, \pm 2, ...$ as desired. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[4. Brown p.133-3]
+\end{question}
+\begin{solution}
+We are given a function $f(z) = \pi \exp{(\pi\bar{z})}$, contour $C$ as the boundary of
+the square with vertices at the points $0, 1, 1 + i, i$, and the orientation of $C$
+being the counter-clockwise direction. Separating the integral with 4 different legs, we have
+\eQb
+\int_{C} \pi \exp{(\pi \bar{z})} dz &=&
+\int_{C_1} \pi \exp{(\pi \bar{z})} dz +
+\int_{C_2} \pi \exp{(\pi \bar{z})} dz \\ 
+&+&
+\int_{C_3} \pi \exp{(\pi \bar{z})} dz +
+\int_{C_4} \pi \exp{(\pi \bar{z})} dz, 
+\eQe
+where the legs can be written as 
+\eQb
+C_1 : z &=& x (0 \leq x \leq 1) \\
+C_2 : z &=& 1+ iy (0 \leq y \leq 1) \\
+C_3 : z &=& 1-x + i (0 \leq x \leq 1) \\ 
+C_4 : z &=& i(1-y) (0 \leq y \leq 1).
+\eQe
+Simplifying the leg integrals with their particular values, we obtain
+\eQb
+\int_{C_1} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi x)} dx \\
+&=& e^{\pi} - 1 \\
+\int_{C_2} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi (1-iy))} dy \\
+&=& 2e^{\pi} \\
+\int_{C_3} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi (1-x-i))} dx \\
+&=& e^{\pi} - 1 \\
+\int_{C_4} \pi \exp{(\pi \bar{z})} dz &=&
+\pi \int_{0}^{1} \exp{(\pi i(y-1))} dy \\
+&=& -2. 
+\eQe
+Hence, adding them up, we obtain
+\eQb
+\int_{C} \pi e^{\pi \bar{z}} dz = 4(e^\pi -1),
+\eQe
+as desired. $\qed$
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[5. Brown p.133-8]
+\end{question}
+\begin{solution}
+We are given that 
+\eQb
+\int_{C} f(z) dz &=& \int_{\theta}f[z(\theta)]z^{'}(\theta). \\ 
+\eQe
+We can compute the inner term of the integral as
+\eQb
+f[z(\theta )] z^{'}(\theta ) = R^{a-}e^{i(a-1)\theta}Rie^{i\theta} d\theta &=& 
+R^{a}ie^{ia \theta} d\theta.
+\eQe
+Hence, the integral can be evaluated as
+\eQb
+\int_{C} f(z) dz &=& \int_{-\pi}^{\pi} R^a i e^{ia \theta } d\theta \\
+&=& \dfrac{R^a}{a}(e^{ia\pi} - e^{-ia\pi}) \\
+&=& i \dfrac{2R^a}{a}sin(a\pi ), 
+\eQe
+as desired. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[6. Brown p.138-1]
+\end{question}
+\begin{solution}
+\textbf{(a)} We wish to show that $|\int_{C} \dfrac{z+4}{z^3 - 1} dz | \leq \dfrac{6\pi}{7}$,
+where $C$ is a quarter circle from $2$ to $2i$.
+We have the length of the contour is $\pi$. 
+Now, we compute the upper bound of $|f(z)|$ along the contour: 
+\eQb
+\left| \dfrac{z+4}{z^3 -1 } \right| &=& \dfrac{|z+4|}{|z^3 - 1|}.
+\eQe
+By the triangle inequality, we have
+\eQb
+|z+4| \leq |z| + |4| = 6.
+\eQe
+Again, by the triangle inequality, we have
+\eQb
+|z^3 - 1| \geq |z^3| - |1| = |z|^3 - 1 = 8 - 1 = 7.
+\eQe
+It follows that
+\eQb 
+\dfrac{1}{|z^3 - 1|}  \leq \dfrac{1}{7}.
+\eQe
+Consequently, combining the two inequalities yields 
+\eQb
+\left| \dfrac{z+4}{z^3 -1} \right| \leq \dfrac{6}{7}.
+\eQe
+Since $f$ is piece-wise continous on $C$, we have 
+\eQb
+\left| \int_{C} \dfrac{z+}{z^3 - 1} dz \right|  \leq \dfrac{6\pi}{7},
+\eQe
+as desired. 
+
+\smallskip
+
+\textbf{(b)} We wish to show that 
+$\left| \int_{C} \dfrac{dz}{z^2 -1} \right| \leq \dfrac{\pi}{3}$, where
+$C$ is a quarter circle from $2$ to $2i$. 
+The length of the contour as $\pi$. We now compute the upper bound
+of $|f(z)|$ along the contour, which can be written as $\left| \dfrac{1}{z^2-1} \right|$.
+By the triangle inequality, we have
+\eQb
+|z^2 - 1| \geq |z^2| - |1| = 4 - 1 = 3.
+\eQe
+Hence, we have
+\eQb
+\left| \dfrac{1}{z^2 -1} \right| = \dfrac{1}{\left| z^2 -1 \right|} \leq \dfrac{1}{3}. 
+\eQe 
+Since $f$ is piece-wise continuous on $C$, we have
+\eQb
+\left| \int_{C} \dfrac{dz}{z^2 -1} \right| \leq \dfrac{\pi}{3}, 
+\eQe 
+as desired. $\qed$
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[7. Brown p.138-2]
+\end{question}
+\begin{solution}
+We wish to show that $\left| \int_{C}  \dfrac{dz}{z^4} \right| \leq 4\sqrt{2}$, where
+$C$ is a straight line from $i$ to $1$. The contour length is $\sqrt{2}$.
+Observe that of all the points on the line segment, the midpoint is the closest to the origin,
+that distance being $d = \dfrac{\sqrt{2}}{2}$. Hence, we obtain
+\eQb
+|z| \geq \dfrac{\sqrt{2}}{2}.
+\eQe
+Consequently, it follows that 
+\eQb
+|z|^4 \geq \dfrac{1}{4} \text { and } \dfrac{1}{|z|^4} \leq 4.
+\eQe
+Since $f$ is piece-wise continuous on $C$, we have 
+\eQb
+\left| \int_{C} \dfrac{dz}{z^4} \right| \leq 4\sqrt{2}, 
+\eQe
+as desired. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[8. Brown p.138-3]
+\end{question}
+\begin{solution}
+We wish to show that $\left| \int_{C} (e^z - \bar{z}) dz \right| \leq 60$, where $C$ is the
+boundary of the triangle with vertices at the points $0$, $3i$, and $-4$. Notice that
+the contour length is simply $12$, as the triangle is a $3-4-5$ triangle. Now, we wish to 
+compute an upper bound of $|f(z)|$ along the contour. Observe that
+\eQb
+|e^z - \bar{z}| \leq e^x + \sqrt{x^2 + y^2}, 
+\eQe  
+where $z = x + iy$. As $x \leq 0$, we have that $e^x \leq 1$. Furthermore, 
+$\sqrt{x^2 + y^2} \leq 4$, as the longer side of the triangle from the origin is $4$. Therefore,
+we have 
+\eQb
+|e^z - \bar{z} | \leq 5,
+\eQe 
+and consequently, as $f$ is piecewise continuous, we obtain
+\eQb
+\left| \int_{C} (e^z - \bar{z}) dz \right| \leq 60,
+\eQe
+as desired. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[9. Brown p.138-5]
+\end{question}
+\begin{solution}
+We wish to show the following inequality:
+\eQb
+\left| \int_{C_R} \dfrac{\log(z)}{z^2} dz \right| \leq
+2\pi(\dfrac{\pi + \ln(R)}{R}),
+\eQe
+where $C_R$ denotes the contour along the circle $|z| = R (R>1)$. Hence, the length of the contour
+is simply $2\pi R$. Now, we compute an upper bound of $\left| \dfrac{\log(z)}{z^2} \right|$ along
+the contour. Basic algebraic manipulations and using triangle inequality, we have
+\eQb
+\left| \dfrac{\log(z)}{z^2} \right| &=& \dfrac{| \log(z) |}{|z^2|} = \dfrac{|\ln(R) + i\theta|}{R^2} \\
+&\leq& \dfrac{\ln(R) + |\theta|}{R^2} \leq \dfrac{\ln(R) + \pi}{R^2}, 
+\eQe 
+as $-\pi \leq \theta \leq \pi$. Since the given function is piecewise continuous on $C$, we obtain 
+\eQb
+\left| \int_{C_R} \dfrac{\log(z)}{z^2} dz \right| \leq
+2\pi(\dfrac{\pi + \ln(R)}{R}),
+\eQe
+as desired. By using the l'Hospital's rule. we have
+\eQb
+\underset{R \to \infty}{\lim} 2\pi(\dfrac{\pi + \ln(R)}{R}) &=& 
+\underset{R \to \infty}{\lim} \dfrac{1}{R} = 0.
+\eQe
+Therefore, as $R \to \infty$ the upper bound of the absolute value of the integral tends to $0$.
+Consequently, we see that the integral must tend to $0$ as well. $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[10. Brown p.138-8]
+\end{question}
+\begin{solution}
+\textbf{(a)} 
+On the vertical side of the square, we have $ x = (N + \dfrac{1}{2})\pi$. Therefore, 
+$\mathrm{sin}(x) = -1$ or $1$. Hence, as we have $|\mathrm{sin}(z)| \geq |\mathrm{sin}(x)|$,
+we obtain $|\mathrm{sin}(z)| \geq 1$. On the horizontal side of the square, we have
+$y = (N + \dfrac{1}{2})\pi$. Therefore, $\mathrm{sinh}(y) = \mathrm{sinh}(\pm \dfrac{1}{2}\pi)$.
+Hence, as we have $|\mathrm{sin}(z)| \geq |\mathrm{sinh}(y)|$, we obtain 
+$|\mathrm{sin}(z)| \geq |\mathrm{sinh}(\dfrac{\pi}{2})|$. Cosnequently, there is a positive constant $A$,
+independent of $N$, such that $|\mathrm{sin}(z)| \leq A$ for all points $z$ lying on the contour
+$C_N$.
+
+\bigskip
+ 
+\textbf{(b)} We wish to show that 
+$\left| \int_{C_N} \dfrac{1}{z^2 sin(z)} dz \right| 
+\leq \dfrac{16}{(2N+1)\pi A}$.
+ The length of the $C_N$ contour is $8(N+\frac{1}{2})\pi$. Now,
+we compute an upper bound of $\left| \dfrac{1}{z^2 sin(z)} \right|$ along the contour.
+We have that $|z^2| \geq ((N+\frac{1}{2})\pi)^2$ and $|sin(z)| \geq A$ on $C_N$. 
+It follows that
+\eQb
+\left| \dfrac{1}{z^2 sin(z)} \right| &=& \dfrac{1}{|z^2||sin(z)|} \\
+&\leq& \dfrac{1}{((N+\frac{1}{2})\pi)^2 A},
+\eQe
+holds on $C_N$. Therfore, as $\dfrac{1}{z^2 sin(z)}$ is piece-wise continuous, we have
+\eQb
+\left| \int_{C_N} \dfrac{1}{z^2 sin(z)} dz \right| &\leq& \dfrac{8(N+\frac{1}{2})\pi}
+{((N+\frac{1}{2})\pi)^2 A} \\ 
+&=& \dfrac{16}{(2N+1)\pi A},
+\eQe
+as desired. $\qed$
+
+\end{solution}
+
+
+\end{document}
+
+
+
