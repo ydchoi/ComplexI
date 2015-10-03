@@ -100,7 +100,7 @@ as desired. $\qed$
 \begin{question}[5. Brown p.147-5]
 \end{question}
 \begin{solution}
-
+Observe that along the lower horizontal leg, we have $z = x ( -a \leq x \leq a)$.
 \end{solution}
 
 \bigskip
@@ -124,6 +124,35 @@ for $f(z) = \dfrac{z+2}{\mathrm{sin}(\frac{z}{2})}$. $\qed$
 
 \bigskip
 
+\begin{question}[2. Brown 159-4]
+\end{question}
+\begin{solution}
+\textbf{(a)}
+Observe that along the lower horizontal leg, we have $z = x \>\> ( -a \leq x \leq a)$.
+Hence, the integral along the lower horizontal leg from $-a$ to $a$ can be written as 
+\eQb
+2\int_{0}^{a} e^{-x^2} dx.
+\eQe
+For the upper horizontal leg, we have $z = x + ib \>\> (-a \leq x \leq a)$. Hence,
+the integra along the upper horizontal from $a$ to $-a$ can be written as 
+\eQb
+\int_{a}^{-a} e^{-(x+ib)^2} dx,
+\eQe
+wich can be simplified as follows:
+\eQb
+\int_{a}^{-a} e^{-(x+ib)^2} dx &=& -e^{b^2}\int_{-a}^{a} e^{-x^2 - 2ibx} dx \\
+&=& -2e^{b^2} \int_{0}^{a} e^{-x^2}\mathrm{cos}(2bx) dx. \\
+\eQe
+Hence, we have 
+\eQb
+2\int_{0}^{a} e^{-x^2} dx + 
+-2e^{b^2} \int_{0}^{a} e^{-x^2}\mathrm{cos}(2bx) dx,
+\eQe
+for the sum of contour integrals along each horizontal leg. Now, observe that 
+along the right verical leg, we have $z = a + iy \>\> ( 0 \leq y \leq b)$. Hence,
+\end{solution}
+
+\bigskip
 
 \begin{question}[1. Brown p.170-1]
 \end{question}
