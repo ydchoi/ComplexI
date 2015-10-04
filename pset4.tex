@@ -366,4 +366,24 @@ as desired. $\qed$
 
 \end{solution}
 
+\bigskip
+
+\begin{question}[10. Brown 177-1]
+\end{question}
+\begin{solution}
+Assume that $f(z)$ is entire, and that the harmonic function $u(x,y) = Re[f(z)]$
+has an upper bound $u_0$. Observe that $g(z) = e^{f(z)}$ is entire, and 
+\eQb
+|e^{f(z)}| = |e^{u(x,y) + iv(x,y)}| = |e^{u(x,y)}| \leq e^{u_0},
+\eQe
+as $u_0$ is an upper bound for $u(x,y)$. Therefore, by the Liouville's theorem, we have
+that $g$ is constant. Then, $g^{'}(z) = 0$ for all $z$. By the complex chain rule, we obtain
+\eQb
+g'(z) = f'(z) e^{f(z)}. 
+\eQe
+Since $e^{f(z)} \neq 0$, we have $f'(z) = 0$, and $f(z)$ is constant. $\qed$
+
+\end{solution}
+
+
 \end{document}
