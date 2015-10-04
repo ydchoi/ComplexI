@@ -165,7 +165,7 @@ wich can be simplified as follows:
 \eQe
 Hence, we have 
 \eQb
-2\int_{0}^{a} e^{-x^2} dx + 
+2\int_{0}^{a} e^{-x^2} dx  
 -2e^{b^2} \int_{0}^{a} e^{-x^2}\mathrm{cos}(2bx) dx,
 \eQe
 for the sum of contour integrals along each horizontal leg. 
@@ -173,16 +173,50 @@ for the sum of contour integrals along each horizontal leg.
 \smallskip
 
 Now, observe that 
-along the right vertical leg, we have $z = a + iy \>\> ( 0 \leq y \leq b)$. Hence,
-the integral along the right vertical leg can be written as 
+along the vertical legs, we have $z = \pm a + iy \>\> ( 0 \leq y \leq b)$. Hence,
+the integral along the vertical legs can be written as 
 \eQb
-dd
+I &=& \int_{0}^{b} e^{-(a+iy)^2} idy + \int_{b}^{0} e^{-(-a+iy)^2} idy, 
 \eQe
-For the left horizontal leg, we have $z = x -ib$. Similarly, the integral along the
-left vertical leg can be written as
+which can be simplified as follows:
 \eQb
-dd
+I &=& \int_{0}^{b} e^{-a^2 - 2iay + y^2} idy - \int_{0}^{b} e^{-a^2 + 2iay + y^2} idy \\
+&=& ie^{-a^2} \int_{0}^{b}e^{y^2}e^{-i2ay} - ie^{-a^2}\int_{0}^{b} e^{y^2}e^{2iay} dy. \\ 
 \eQe
+Hence, by the Cauchy-Goursat Theorem, we have 
+\eQb
+2\int_{0}^{a} e^{-x^2} dx  
+-2e^{b^2} \int_{0}^{a} e^{-x^2}\mathrm{cos}(2bx) dx && \\
++ ie^{-a^2} \int_{0}^{b}e^{y^2}e^{-i2ay} - ie^{-a^2}\int_{0}^{b} e^{y^2}e^{2iay} dy &=& 0, \\
+\eQe
+which by re-arranging and simplifying becomes 
+\eQb
+\int_{0}^{a} e^{-x^2}cos(2bx)dx = e^{-b^2}\int_{0}^{a} e^{-x^2} dx + e^{-a^2-b^2}\int_{0}^{b}
+e^{y^2}sin(2ay)dy,
+\eQe
+as desired.
+
+\smallskip
+
+\textbf{(b)} As $a \to \infty$, we have that
+\eQb
+e^{-a^2-b^2} \int_{0}^{b} e^{y^2} dy \to 0.
+\eQe
+Observe that 
+\eQb
+\left| e^{-a^2-b^2} \int_{0}^{b} e^{y^2}sin(2ay) dy \right|
+\leq e^{-a^2-b^2} \int_{0}^{b} e^{y^2} dy.
+\eQe
+Hence, by the squeeze theorem, we have as $a \to \infty$
+\eQb
+e^{-a^2-b^2} \int_{0}^{b} e^{y^2}sin(2ay) dy \to 0.
+\eQe
+Therefore, with the given result in the problem, we obtain 
+\eQb
+\int_{0}^{\infty} e^{-x^2} cos(2bx) dx &=& \dfrac{\sqrt{\pi}}{2}e^{-b^2},
+\eQe
+as desired. $\qed$
+
 \end{solution}
 
 \bigskip
@@ -339,6 +373,26 @@ which simplifies to
 \eQb
 \int_{C} \dfrac{e^{az}}{z} dz &=& 2\pi i. 
 \eQe
+As $C$ is the unit circle, we have a polar parametrization as $z = e^{i\theta}$. Hence,
+by substitution, we have
+\eQb
+\int_{C} \dfrac{e^{az}}{z} dz &=& 
+\int_{-\pi}^{\pi} \dfrac{exp(ae^{i\theta})}{e^{i\theta}} ie^{i\theta}d\theta \\
+&=& i\int_{-\pi}^{\pi} exp(ae^{i\theta}) d\theta \\
+&=& i\int_{-\pi}^{\pi} e^{acos(\theta)}e^{iasin(\theta)} d\theta \\ 
+&=& i\int_{-\pi}^{\pi} e^{acos(\theta)}(cos(asin(\theta)) + isin(asin(\theta)) d\theta \\
+&=& -\int_{-\pi}^{\pi} sin(asin(\theta)d\theta + i\int_{-\pi}^{\pi} e^{acos(\theta)}
+cos(asin(\theta)) d\theta
+\eQe
+As the above integral equals $2\pi i$, we have
+\eQb
+\int_{-\pi}^{\pi} e^{acos(\theta)}cos(asin(\theta)) d\theta &=& 2\pi,
+\eQe
+which, as the integrand is even, simplifies to
+\eQb
+\int_{0}^{\pi} e^{acos(\theta)}cos(asin(\theta)) d\theta &=& \pi,
+\eQe
+as desired. $\qed$
 \end{solution}
 
 
