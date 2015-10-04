@@ -100,7 +100,27 @@ as desired. $\qed$
 \begin{question}[5. Brown p.147-5]
 \end{question}
 \begin{solution}
-Observe that along the lower horizontal leg, we have $z = x ( -a \leq x \leq a)$.
+Let $C$ be a contour from $-1$ to $1$ that lies above the x-axis. We wish to compute the
+following integral:
+\eQb
+\int_{C} z^i dz,
+\eQe
+where $z^i$ denotes the principal branch $exp(iLog(z))$ for $|z| > 0, -\pi < Arg(z) < 
+\pi$. Notice that under the principal branch, $z = -1$ is not defined. The following
+branch, however, agrees with the integrand along $C$ and is has anti-derivative along 
+$C$:
+\eQb
+z^i = exp(ilog(z)) \text{ for } (|z| > 0, -\dfrac{\pi}{2} < arg(z) < \dfrac{3\pi}{2}).
+\eQe
+We then can compute the integral as follows:
+\eQb
+\int_{C} z^{i} dz &=& \left[ \dfrac{z^{i+1}}{i+1} \right]_{-1}^{1} \\
+&=& \dfrac{1}{i+1}(e^{(i+1)log1} - e^{(i+1)log(-1)}) \\
+&=& \dfrac{1}{i+1}(e^{(i+1)(ln1)} - e^{(i+1)ln(1 + i\pi)}) \\
+&=& \dfrac{1}{i+1}(1 + e^{i\pi}) \\
+&=& \dfrac{1 + e^{-\pi}}{2}(1 - i),
+\eQe
+as desired. $\qed$
 \end{solution}
 
 \bigskip
