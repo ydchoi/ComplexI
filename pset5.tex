@@ -41,7 +41,7 @@
 \usepackage{verbatimbox}
 \usepackage{listings}
 \title{Complex Analysis I: \\
-Problem Set IV}
+Problem Set V}
 
 
 \author{
@@ -77,17 +77,34 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 
 \bigskip
 
-\begin{question}[1.177.2]
+\begin{question}[1. 177.2]
 \end{question}
 \begin{solution}
-
+Let $f$ be continuous on a closed bounded region $R$, and let it be
+analytic and not constant throughout the interior of $R$. Assume 
+that $f(z) \neq 0$ for $z \in R$. Let $g$ be a function on $R$,
+defined by $g(z) = \dfrac{1}{f(z)}$ for $z \in R$. From the $g(z) = 
+\dfrac{1}{f(z)}$ relation, we can deduce that
+$g$ is also continuous, analytic and not constant throughout the interior
+of $R$. Then, by the given corollary of the maximum modulus principle,
+we have that the maximum value of $|g(z)|$ in $R$, which is always 
+reached, occurs somewhere on the boundary of $R$ and never in the interior.
+Observe that $|g(z)| = |\dfrac{1}{f(z)}| = \dfrac{1}{|f(z)|}$. Since
+a modulus is strictly positive in this case, we have that maximum value
+of $|g(z)|$ corresponds to the minimum value of $|f(z)|$. 
+In other words,
+the $z^*$, which is $\text{argmax} |g(z)|$ and lies on the boundary, is also
+the $\text{argmin} |f(z)|$. Consequently, we have shown that a minimum
+value is reached, and it occurs in the boundary of $R$ and never in
+the interior. $\qed$ 
 \end{solution}
 
 \bigskip
 
-\begin{question}[1.177.4]
+\begin{question}[2. 177.4]
 \end{question}
 \begin{solution}
+
 \end{solution}
 
 \bigskip
@@ -102,6 +119,29 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \begin{question}[4. 195.3]
 \end{question}
 \begin{solution}
+We wish to find the Maclaurin series expansion of the function
+\eQb
+f(z) &=& \dfrac{z}{z^4 + 4} = \dfrac{z}{4} \cdot 
+\dfrac{1}{1 + (z^4/4)}.
+\eQe
+As the given function $f$ is analytic throughout a disk
+$D = \{ z \> | \> |z - z_0| < R_0 \}$, 
+where $z_0 = 0$ and $R_0 = \sqrt{2}$,
+by the Taylor's theorem, we have a Maclaurin series
+expansion for $f$ as
+\eQb
+f(z) &=& \sum_{n=0}^{\infty} \dfrac{f^{(n)}(0)}{n!}z^n, 
+\eQe
+for $|z| < \sqrt{2}$. For $f$, the nth derivative can be computed,
+using the chain rule and product rule of differentiation,
+as follows:
+\eQb
+f^{(1)}(z) &=& \dfrac{1}{4} \cdot \dfrac{1}{1+(z^4/4))} + 
+\dfrac{z}{4}\cdot \dfrac{-z^3}{1+(z^4/4)} \\
+ &=& \dfrac{1}{4}\left( \dfrac{1-z^4}{1+(z^4/4)} \right) \\
+f^{(2)}(z) &=& \dfrac{1}{4}
+\eQe
+ 
 \end{solution}
 
 \bigskip
@@ -109,6 +149,21 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \begin{question}[5. 195.6]
 \end{question}
 \begin{solution}
+From pg.193, we are given a Maclaurin series expansion of $\sinh$ as
+\eQb
+\sinh (z) &=& \sum_{i=0}^{\infty} \dfrac{z^{2n+1}}{(2n+1)!},
+\eQe
+for all $z \in \mathbb{C}$.
+From pg.196, we are given that $\sinh(z + \pi i) = -\sinh(z)$ and
+$\sinh$ is $2\pi i$ periodic. Consequently, we have that
+$\sinh(z - \pi i) = -\sinh(z)$. Substituting the equality into
+the above Taylor series expansion yields
+\eQb
+\sinh(z -\pi i) &=& \sum_{i=0}^{\infty} \dfrac{(z-\pi i)^{2n+1}}{(2n+1)!} \\
+\sinh(z) &=& -\sum_{i=0}^{\infty} \dfrac{(z-\pi i)^{2n+1}}{(2n+1)!}, \\
+\eQe
+for any $z \in \mathbb{C}$.
+as desired. $\qed$
 \end{solution}
 
 \bigskip
