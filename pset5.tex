@@ -177,7 +177,7 @@ Substituting $0$ into $x$, we get
 \eQb
 tanh(z) &=& z - \dfrac{1}{3}z^3 + ... 
 \eQe
-as desired for the first two nonzero terms of the series. 
+as desired for the first two nonzero terms of the series. $\qed$ 
 \end{solution}
 
 \bigskip
@@ -206,9 +206,51 @@ for $|z| < 4$ as desired. $\qed$
 
 \bigskip
 
+\begin{question}[8. 205.6]
+\end{question}
+\begin{solution}
+By partial fraction decomposition, we have
+\eQb
+\dfrac{z}{(z-1)(z-3)} &=& 
+\dfrac{3}{2}\cdot \dfrac{1}{z-3} - \dfrac{1}{2}
+\cdot \dfrac{1}{z-1}.
+\eQe
+The above equality can be written as
+\eQb
+\dfrac{z}{(z-1)(z-3)} &=& -\dfrac{3}{4}\cdot 
+\dfrac{1}{1- \frac{z-1}{2}} + \dfrac{1}{2}\cdot \dfrac{1}{1-z}.
+\eQe
+Since $0 < |z-1| < 2$, we have $0 < | \dfrac{z-1}{2} | 
+< 1$. Therefore, by the geometric series, we have
+\eQb
+\dfrac{z}{(z-1)(z-3)} &=& -\dfrac{3}{4}
+\sum_{k=0}^{\infty} \dfrac{(z-1)^k}{2^k} - \dfrac{1}{2(z-1)} \\
+&=& -3\sum_{k=0}^{\infty} \dfrac{(z-1)^k}{2^{k+2}} - \dfrac{1}{2(z-1)}, \\ 
+\eQe 
+for $0 < |z-1| < 2$ as desired. $\qed$ 
+\end{solution}
+
+\bigskip
+
 \begin{question}[10. 224.1]
 \end{question}
 \begin{solution}
+Observe that
+\eQb
+e^z &=& \sum_{k=0}^{\infty} \dfrac{1}{k!}z^k \\
+\dfrac{1}{z(z^2+1)} &=& 
+\dfrac{1}{z}\sum_{k=0}^{\infty} 
+(-z^2)^{k}, \\
+&=& 
+\sum_{k=0}^{\infty} 
+(-1)^{k} z^{2k+1} \\
+\eQe
+$|z| < 1$. By multiplying out the first few terms manually, we obtain
+\eQb
+\dfrac{e^z}{z^2+1} &=& 
+\dfrac{1}{z} + 1 - \dfrac{1}{2}z - \dfrac{5}{6}z^2 + ... ,
+\eQe
+for $|z| < 1$. $\qed$
 \end{solution}
 
 \bigskip
