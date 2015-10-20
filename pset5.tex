@@ -218,7 +218,19 @@ for $|z| < 4$ as desired. $\qed$
 \begin{question}[7. 205.5]
 \end{question}
 \begin{solution}
-
+For $z \in D_1$, we have $|z| <1$. Hence, by the geometric series,
+we obtain 
+\eQb
+\dfrac{1}{z-1} &=& - \dfrac{1}{1-z} = \sum_{k=0}^{\infty} z^n \\
+-\dfrac{1}{z-2} &=& \dfrac{1}{2}\dfrac{1}{1- \frac{z}{2}} = 
+\sum_{k=0}^{\infty} \dfrac{z^k}{2^{k+1}}. \\ 
+\eQe
+It follows that
+\eQb
+f(z) &=& -\sum_{k=0}^{\infty} z^k + \sum_{k=0}^{\infty} \dfrac{z^k}{2^{k+1}} \\
+&=& \sum_{k=0}^{\infty} (-1 + 2^{-k-1}) z^k,
+\eQe
+for $z \in D_1$. 
 \end{solution}
 
 \bigskip
