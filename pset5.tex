@@ -104,13 +104,20 @@ the interior. $\qed$
 \begin{question}[2. 177.4]
 \end{question}
 \begin{solution}
+From the given hint, we have that
+\eQb
+|f(z)|^2 &=& sin^2(x) + sinh^2(y). 
+\eQe
+Observe that it reaches maximum with respect to $x$ on $\dfrac{\pi}{2}$
+and with respect to $y$ on $1$, simply from the known properties of $sin$
+and $sinh$ functions. Also, $(\dfrac{\pi}{2},1)$ is a feasible point.
+Hence, we obtain that $|f(x)|^2$ reaches its maximum at $\dfrac{\pi}{2}
++ i$ on the boundary. $\qed$ 
 \end{solution}
-
-
 
 \bigskip
 
-\begin{question}[1.177.5]
+\begin{question}[3.177.5]
 \end{question}
 \begin{solution}
 Let $f(z) = u(x,y) + iv(x,y)$ be a function that is continuous on a closed
@@ -127,23 +134,11 @@ We wish to find the Maclaurin series expansion of the function
 f(z) &=& \dfrac{z}{z^4 + 4} = \dfrac{z}{4} \cdot 
 \dfrac{1}{1 + (z^4/4)}.
 \eQe
-As the given function $f$ is analytic throughout a disk
-$D = \{ z \> | \> |z - z_0| < R_0 \}$, 
-where $z_0 = 0$ and $R_0 = \sqrt{2}$,
-by the Taylor's theorem, we have a Maclaurin series
-expansion for $f$ as
+From the geometric series, we have
 \eQb
-f(z) &=& \sum_{n=0}^{\infty} \dfrac{f^{(n)}(0)}{n!}z^n, 
+\dfrac{1}{1-z} &=& \sum_{k=0}^{\infty} z^k, 
 \eQe
-for $|z| < \sqrt{2}$. For $f$, the nth derivative can be computed,
-using the chain rule and product rule of differentiation,
-as follows:
-\eQb
-f^{(1)}(z) &=& \dfrac{1}{4} \cdot \dfrac{1}{1+(z^4/4))} + 
-\dfrac{z}{4}\cdot \dfrac{-z^3}{1+(z^4/4)} \\
- &=& \dfrac{1}{4}\left( \dfrac{1-z^4}{1+(z^4/4)} \right) \\
-f^{(2)}(z) &=& \dfrac{1}{4}
-\eQe
+for $|z| < 1$.
  
 \end{solution}
 
@@ -171,11 +166,36 @@ as desired. $\qed$
 
 \bigskip
 
-\begin{question}[6. 195.11]
+\begin{question}[10. 224.1]
 \end{question}
 \begin{solution}
 \end{solution}
 
+\bigskip
+
+\begin{question}[11. 224.3]
+\end{question}
+\begin{solution}
+\end{solution}
+
+\bigskip
+
+\begin{question}[12. 224.5]
+\end{question}
+\begin{solution}
+\end{solution}
+\bigskip
+
+\begin{question}[13. 224.8]
+\end{question}
+\begin{solution}
+\end{solution}
+\bigskip
+
+\begin{question}[14. 224.9]
+\end{question}
+\begin{solution}
+\end{solution}
 \bigskip
 
 \end{document}
