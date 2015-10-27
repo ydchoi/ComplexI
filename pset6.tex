@@ -220,7 +220,7 @@ Hence, by the residue theorem, we have
 \eQb
 \int_{C} \dfrac{z+1}{z^2-2z} dz = 2\pi i,
 \eQe
-for the given contour. 
+for the given contour. $\qed$ 
 
 \smallskip
 
@@ -231,19 +231,67 @@ for the given contour.
 \begin{question}[3. Brown p.242-1]
 \end{question}
 \begin{solution}
+Simple computations show the following results:
+\textbf{(a)}
+$z = 0$ is essential singular point, and the principal part 
+is $\dfrac{1}{2!}\dfrac{1}{z} + \dfrac{1}{3!}\dfrac{1}{z^2} \dots$.
+
+\smallskip
+
+\textbf{(b)}
+$z = -1$ is the singular point with the principal part being $\dfrac{1}{z+1}$.
+$z = -1$ is a simple pole.
+
+\smallskip
+
+\textbf{(c)}
+$z = 0$ is the singular point with the $0$ principal part. $z=0$ is removable.
+
+\smallskip
+
+\textbf{(d)}
+$z = 0$ is the singular point with the principal part $\dfrac{1}{z}$. 
+$z = 0$ is a simple pole.
+
+\smallskip
+
+\textbf{(e)}
+$z=2$ is the singular point and the principal part is the given function 
+itself. It is a pole of order $3$. $\qed$
 
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. Brown p.246-2]
+\begin{question}[4. Brown p.246-2]
 \end{question}
 \begin{solution}
+\textbf{(a)} Observe that
+\eQb
+f(z) &=& \dfrac{\phi(z)}{z+1},
+\eQe
+where $\phi(z) = z^{\frac{1}{4}}$. It follows that
+\eQb
+\text{Res}_{z=-1}f(z) &=& \phi(-1) = \dfrac{1+i}{\sqrt{2}}.
+\eQe
+
+\smallskip
+
+\textbf{(b)} Observe that
+\eQb
+\dfrac{\text{Log}(z)}{(z^2+1)^2} &=& \dfrac{\phi(z)}{(z-i)^2}, 
+\eQe
+where $\phi(z) = \dfrac{\text{Log}(z)}{(z+i)^2}$. It follows that
+\eQb
+\text{Res}_{z=i} \dfrac{\text{Log}(z)}{(z^2+1)^2} &=& \phi^{'}(i) \\
+&=& \dfrac{\pi + 2i}{8}.
+\eQe
+
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. Brown p.246-4]
+\begin{question}[5. Brown p.246-4]
 \end{question}
 \begin{solution}
 We wish to evaluate 
@@ -304,7 +352,7 @@ This completes the computation. $\qed$
 
 \end{solution}
 
-\bigskip
+\pagebreak
 
 \begin{question}[1. Brown p.246-6]
 \end{question}
