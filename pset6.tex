@@ -88,7 +88,8 @@ We have
 &=& \dfrac{1}{z} - 1 + z \dots
 \eQe
 for $0 < |z| < 1$.
-The coefficient of $\dfrac{1}{z}$ term is $1$. Hence, the residue is
+The coefficient of $\dfrac{1}{z}$ term is $1$. Hence, the residue 
+at $z = 0$ is
 $1$. \\
 
 \smallskip
@@ -101,7 +102,8 @@ z\cos(\dfrac{1}{z}) &=& z(1 - \dfrac{1}{2!}\dfrac{1}{z^2} +
 &=& z - \dfrac{1}{2!}\dfrac{1}{z} + \dfrac{1}{4!}\dfrac{1}{z^3} \dots \\
 \eQe
 for $|z| < \infty$. 
-The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue is $0$.
+The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue 
+at $z = 0$ is $0$.
 
 \smallskip
 
@@ -112,7 +114,8 @@ We have
 &=& \dfrac{1}{z}(z - (z - \dfrac{z^3}{3!} + \dfrac{z^5}{5!} \dots)) \\
 \eQe
 for $0 < |z| < \infty$. 
-The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue is $0$.
+The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue 
+at $z = 0$ is $0$.
 
 \smallskip
 
@@ -121,7 +124,8 @@ We have
 \eQb
 \dfrac{\cot(z)}{z^4} &=& \dfrac{1}{z^4}\cdot \dfrac{\cos(z)}{\sin(z)} \\
 \eQe
-By dividing the series representation of $\cos$ by $\sin$, we obtain
+By dividing the Maclaurin 
+series representation of $\cos$ by $\sin$, we obtain
 \eQb
 \dfrac{\cos(z)}{\sin(z)} &=& \dfrac{1}{z} - \dfrac{z}{3} - \dfrac{z^3}{45}
 \dots \\
@@ -133,39 +137,108 @@ It follows that
 \dfrac{1}{45}\cdot\dfrac{1}{z} \dots  
 \eQe
 for $0 < |z| < \pi$. The coefficient of $\dfrac{1}{z}$ is $-\dfrac{1}{45}$.
-Hence, the residue is $-\dfrac{1}{45}$.
+Hence, the residue at $z = 0$ is $-\dfrac{1}{45}$.
 
-\smallski[
+\smallskip
 
+\textbf{(e)}
+We have
+\eQb
+\dfrac{\sinh(z)}{z^4(1-z^2)} &=& \sinh(z) \cdot \dfrac{1}{z^4} \cdot
+\dfrac{1}{1-z^2} 
+\eQe
+By substituting the Maclaurin series, we obtain
+\eQb
+\dfrac{\sinh(z)}{z^4(1-z^2)} &=&
+\dfrac{1}{z^4}(z + \dfrac{1}{6}z^3 + \dfrac{1}{120}z^5 \dots )
+(1 + z^2 + z^4 \dots) \\
+&=& \dfrac{1}{z^3} + \dfrac{7}{6}\dfrac{1}{z} \dots \\
+\eQe
+The coefficient of $\dfrac{1}{z}$ is $\dfrac{7}{6}$. Hence, the residue
+at $z = 0$ is $\dfrac{7}{6}$. \qed
 \end{solution}
 
 
 \bigskip
 
-\begin{question}[1. Brown p.147-2]
+\begin{question}[2. Brown p.237-2]
+\end{question}
+\begin{solution}
+By the Cauchy's residue theorem, we can evaluate the integral by
+computing the residues.
+\textbf{(a)} We compute the residue of the integrand at $z = 0$. 
+Using the Laurent series of $\dfrac{\exp(-z)}{z^2}$, we obtain
+\eQb
+\dfrac{\exp(-z^2)}{z^2} &=& \dfrac{1}{z^2}(1- \dfrac{1}{1!}z + 
+\dfrac{1}{2!}z^2 \dots ) \\
+&=& \dfrac{1}{z^2} - \dfrac{1}{1!}\dfrac{1}{z} \dots
+\eQe
+Hence, the residue at $z = 0$ is $-1$. Therefore, by the Cauchy's
+residue theorem, we obtain
+\eQb
+\int_{C} \dfrac{\exp(-z)}{z^2}dz &=& 2\pi i (-1) = -2\pi i.
+\eQe
+
+\smallskip
+
+\textbf{(b)}
+
+\smallskip
+
+\textbf{(c)}
+
+\smallskip
+
+\textbf{(d)} 
+
+\smallskip
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[1. Brown p.246-2]
 \end{question}
 \begin{solution}
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. Brown p.147-2]
+\begin{question}[1. Brown p.246-4]
 \end{question}
 \begin{solution}
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. Brown p.147-2]
+\begin{question}[1. Brown p.246-5]
 \end{question}
 \begin{solution}
+
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. Brown p.147-2]
+\begin{question}[1. Brown p.246-6]
 \end{question}
 \begin{solution}
+We wish to evaluate 
+\eQb
+\int_{C} \dfrac{\cosh(\pi z)}{z(z^2+1)} dz
+\eQe
+where $C$ is the circle $|z| = 2$, described in the positive sense. 
+The singularities of the integrand, that are interior to $C$,
+are $0, \pm i$. The residues are respectively
+\eQb
+\dfrac{\cosh(\pi z)}{z^2 +1}|_{z = 0} &=& 1 \\
+\dfrac{\cosh(\pi z)}{z(z+i)}|_{z=i} &=& \dfrac{1}{2} \\
+\dfrac{\cosh(\pi z)}{z(z-i)}|_{z=-i} &=& \dfrac{1}{2}.
+\eQe 
+Hence, by the Cauchy residue theorem, we have
+\eQb
+\int_{C} \dfrac{\cosh(\pi z)}{z(z^2+1)} dz = 4\pi i,
+\eQe
+as desired. $\qed$
 \end{solution}
 
 \end{document}
