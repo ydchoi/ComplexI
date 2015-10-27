@@ -207,6 +207,32 @@ residue theorem, we obtain
 \begin{question}[1. Brown p.246-4]
 \end{question}
 \begin{solution}
+We wish to evaluate 
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz,
+\eQe
+for $C$ being the circle $|z-2| = 2$, taken in the counterclockwise direction.
+Clearly, the singularities of the integrand are $1$ and $\pm 3i$.
+The residues at the singularities can be computed as follows:
+\eQb
+\text{Res}_{z=1} \dfrac{3z^3+2}{(z-1)(z^2+9)} &=& 
+\dfrac{3z^3+2}{z^2+9}]_{z=1} = \dfrac{1}{2} \\
+ \text{Res}_{z=3i} \dfrac{3z^3+2}{(z-1)(z^2+9)} &=& 
+\dfrac{3z^3+2}{(z-1)(z+3i)}]_{z=3i} = \dfrac{15+49i}{12} \\
+\text{Res}_{z=-3i} \dfrac{3z^3+2}{(z-1)(z^2+9)} &=& 
+\dfrac{3z^3+2}{(z-1)(z-3i)}]_{z=-3i} = \dfrac{15-49i}{12}. \\
+\eQe 
+For the part $(a)$, we have $z=1$ is the only singularity inside $C$. 
+Hence, by Cauchy's residue theorem, we have
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& \pi i.
+\eQe
+For the part $(b)$, we have all singularities inside $C$. It follows that
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& 2\pi i(\dfrac{1}{2} 
++ \dfrac{15+49i}{12} + \dfrac{15-49i}{12}) = 6\pi i.
+\eQe
+This completes the computations. $\qed$ 
 \end{solution}
 
 \bigskip
