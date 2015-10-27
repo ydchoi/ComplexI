@@ -41,7 +41,7 @@
 \usepackage{verbatimbox}
 \usepackage{listings}
 \title{Complex Analysis I: \\
-Problem Set IV}
+Problem Set VI}
 
 
 \author{
@@ -71,279 +71,101 @@ New York University\\
 \maketitle
 
 \begin{abstract}
-This work contains the solutions to the problem set IV
+This work contains the solutions to the problem set VI
 of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \end{abstract}
+
+\bigskip
+
+\begin{question}[1. 237-2]
+\end{question}
+\begin{solution}
+\textbf{(a)}
+We have
+\eQb
+\dfrac{1}{z+z^2} &=& \dfrac{1}{z}\dfrac{1}{1+z} \\
+&=& \dfrac{1}{z} (1 - z +z^2 \dots ) \\
+&=& \dfrac{1}{z} - 1 + z \dots
+\eQe
+for $0 < |z| < 1$.
+The coefficient of $\dfrac{1}{z}$ term is $1$. Hence, the residue is
+$1$. \\
+
+\smallskip
+
+\textbf{(b)} 
+We have
+\eQb
+z\cos(\dfrac{1}{z}) &=& z(1 - \dfrac{1}{2!}\dfrac{1}{z^2} + 
+\dfrac{1}{4!}\dfrac{1}{z^4} \dots) \\
+&=& z - \dfrac{1}{2!}\dfrac{1}{z} + \dfrac{1}{4!}\dfrac{1}{z^3} \dots \\
+\eQe
+for $|z| < \infty$. 
+The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue is $0$.
+
+\smallskip
+
+\textbf{(c)} 
+We have 
+\eQb
+\dfrac{z - \sin(z)}{z} &=& \dfrac{1}{z}\cdot\dfrac{1}{\sin(z)} \\
+&=& \dfrac{1}{z}(z - (z - \dfrac{z^3}{3!} + \dfrac{z^5}{5!} \dots)) \\
+\eQe
+for $0 < |z| < \infty$. 
+The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue is $0$.
+
+\smallskip
+
+\textbf{(d)} 
+We have
+\eQb
+\dfrac{\cot(z)}{z^4} &=& \dfrac{1}{z^4}\cdot \dfrac{\cos(z)}{\sin(z)} \\
+\eQe
+By dividing the series representation of $\cos$ by $\sin$, we obtain
+\eQb
+\dfrac{\cos(z)}{\sin(z)} &=& \dfrac{1}{z} - \dfrac{z}{3} - \dfrac{z^3}{45}
+\dots \\
+\eQe
+for $0 < |z| < \pi$. 
+It follows that
+\eQb
+\dfrac{\cot(z)}{z^4} &=& \dfrac{1}{z^5} - \dfrac{1}{3}\cdot\dfrac{1}{z^3} - 
+\dfrac{1}{45}\cdot\dfrac{1}{z} \dots  
+\eQe
+for $0 < |z| < \pi$. The coefficient of $\dfrac{1}{z}$ is $-\dfrac{1}{45}$.
+Hence, the residue is $-\dfrac{1}{45}$.
+
+\smallski[
+
+\end{solution}
+
 
 \bigskip
 
 \begin{question}[1. Brown p.147-2]
 \end{question}
 \begin{solution}
-\textbf{(b)} We first have that $\mathrm{cos}(z/2)$ is continous 
-everywhere on the complex plane. Therefore, any contour from $0$
-to $\pi + 2i$ will have the same value of $F(\pi + 2i) - F(0)$,
-where $F$ denotes the antiderivative of $\mathrm{cos}(z/2)$.
-We can compute the exact value as follows:
-\eQb
-\int_{0}^{\pi + 2i} \mathrm{cos}(\dfrac{z}{2}) dz
-&=& \left[ 2\mathrm{sin}(\dfrac{z}{2}) \right]_0^{\pi + 2i}  \\
-&=& 2\mathrm{sin}(\dfrac{\pi}{2} + i) \\
-&=& 2\mathrm{cos}(i) \\
-&=& e + \dfrac{1}{e},
-\eQe
-as desired. $\qed$
 \end{solution}
 
 \bigskip
 
-\begin{question}[5. Brown p.147-5]
+\begin{question}[1. Brown p.147-2]
 \end{question}
 \begin{solution}
-Observe that along the lower horizontal leg, we have $z = x ( -a \leq x \leq a)$.
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. Brown p.159-2]
+\begin{question}[1. Brown p.147-2]
 \end{question}
 \begin{solution}
-\textbf{(b)}
-Let $C_1$ denote the positively oriented boundary of the square 
-whose sides lie along the line $x = \pm 1$, $y = \pm 1$ and 
-let $C_2$ be the positively oriented circle $|z| = 4$. Observe that
-$C_1$ is interior to $C_2$ and the given function 
-$\dfrac{z+2}{\mathrm{sin}(\frac{z}{2})}$ is analytic in the closed
-region consisting of the $C_1$ and $C_2$ contours and all points
-between them. Hence, by the corollary, we have
-\eQb
-\int_{C_1} f(z) dz &=& \int_{C_2} f(z) dz,
-\eQe
-for $f(z) = \dfrac{z+2}{\mathrm{sin}(\frac{z}{2})}$. $\qed$
 \end{solution}
 
 \bigskip
 
-\begin{question}[2. Brown 159-4]
+\begin{question}[1. Brown p.147-2]
 \end{question}
 \begin{solution}
-\textbf{(a)}
-Observe that along the lower horizontal leg, we have $z = x \>\> ( -a \leq x \leq a)$.
-Hence, the integral along the lower horizontal leg from $-a$ to $a$ can be written as 
-\eQb
-2\int_{0}^{a} e^{-x^2} dx.
-\eQe
-For the upper horizontal leg, we have $z = x + ib \>\> (-a \leq x \leq a)$. Hence,
-the integra along the upper horizontal from $a$ to $-a$ can be written as 
-\eQb
-\int_{a}^{-a} e^{-(x+ib)^2} dx,
-\eQe
-wich can be simplified as follows:
-\eQb
-\int_{a}^{-a} e^{-(x+ib)^2} dx &=& -e^{b^2}\int_{-a}^{a} e^{-x^2 - 2ibx} dx \\
-&=& -2e^{b^2} \int_{0}^{a} e^{-x^2}\mathrm{cos}(2bx) dx. \\
-\eQe
-Hence, we have 
-\eQb
-2\int_{0}^{a} e^{-x^2} dx + 
--2e^{b^2} \int_{0}^{a} e^{-x^2}\mathrm{cos}(2bx) dx,
-\eQe
-for the sum of contour integrals along each horizontal leg. Now, observe that 
-along the right verical leg, we have $z = a + iy \>\> ( 0 \leq y \leq b)$. Hence,
-\end{solution}
-
-\bigskip
-
-\begin{question}[1. Brown p.170-1]
-\end{question}
-\begin{solution}
-Let $C$ denote the positively oriented boundary of the square whose sides
-lie along the lines $x = \pm 2$ and $y = \pm 2$. We evaluate 
-the following integrals. 
-
-\smallskip
-
-\textbf{(b)}
-We are given the following integral:
-\eQb
-\int_{C} \dfrac{\mathrm{cos}(z)}{z(z^2+8)} dz,
-\eQe
-which can be written as
-\eQb
-\int_{C} \dfrac{\frac{\mathrm{cos}(z)}{(z^2+8)}}{z} dz.
-\eQe
-As $\dfrac{\mathrm{cos}(z)}{(z^2+8)}$ is analytic everywhere inside
-and on the given contour, which is simple and closed, taken in the 
-positive sense, by the Cauchy Integral formula, we obtain
-\eQb
-\dfrac{\mathrm{cos}(0)}{8} &=& \dfrac{1}{2\pi i} \int_{C} 
-\dfrac{\frac{\mathrm{cos}(z)}{(z^2+8)}}{z} dz,
-\eQe
-which simplifies to 
-\eQb
-\int_{C} \dfrac{\frac{\mathrm{cos}(z)}{(z^2+8)}}{z} dz &=&
-\dfrac{\pi i}{4}.
-\eQe
-
-\smallskip
-
-\textbf{(d)}
-We are given the following integral:
-\eQb
-\int_{C} \dfrac{\mathrm{cosh}(z)}{z^4} dz.
-\eQe
-As $\dfrac{\mathrm{cosh}(z)}{z^4}$ is analytic everywhere inside
-and on the given contour, which is simple and closed, taken in the 
-positive sense, by the extended Cauchy Integral formula, we obtain
-\eQb
-\mathrm{cosh}^{(3)}(z_0) 
-&=& \dfrac{3!}{2\pi i} \int_{C} 
-\dfrac{\mathrm{cosh}(z)}{(z-z_0)^4} dz,
-\eQe
-for $z_0$ inside and on the given contour. Observe that 
-$\mathrm{cosh}^{(3)} = \mathrm{sinh}$. Hence, taking
-$z_0 = 0$ yields
-\eQb
-0 &=& \dfrac{3!}{2\pi i} \int_{C} 
-\dfrac{\mathrm{cosh}(z)}{z^4} dz,
-\eQe  
-which simplifies to 
-\eQb
-\int_{C} \dfrac{\mathrm{cosh}(z)}{z^4}dz &=& 0.
-\eQe
-
-\smallskip
-
-
-\textbf{(e)} We are given the following integral:
-\eQb
-\int_{C} \dfrac{\mathrm{tan}(\frac{z}{2})}{(z-x_0)^2} dz, 
-\eQe
-for $-2 < x_0 < 2$. Notice that $x_0$ is inside the given contour. 
-As $\dfrac{\mathrm{tan}(\frac{z}{2})}{(z-x_0)^2}$  is analytic
-everywhere inside and on the given contour, which is simple and
-closed, taken in the positive sense, by the extended Cauchy 
-Integral formula, we obtain
-\eQb
-\dfrac{1}{2}\mathrm{sec}^{2}(\dfrac{x_0}{2}) &=& \dfrac{1!}{2\pi i} 
-\int_{C} \dfrac{\mathrm{tan}(\frac{z}{2})}{(z-x_0)^2} dz, 
-\eQe
-which simplifies to 
-\eQb
-\int_{C} \dfrac{\mathrm{tan}(\frac{z}{2})}{(z-x_0)^2} dz 
-&=& i \pi \mathrm{sec}^{2}(\frac{x_0}{2}),
-\eQe
-for $ -2 < x_0 < 2$. $\qed$
-\end{solution}
-
-\bigskip
-
-\begin{question}[2. Brown 170.3]
-\end{question}
-\begin{solution}
-Let $C$ be the circle $|z| = 3$, described in the positive sense.
-As $2s^2 - s - 2$ is analytic everywhere inside and on the given contour,
-which is simple and closed, taken in the positive sense, by the 
-extended Cauchy Integral formula, we obtain 
-\eQb
-2z^2-z - 2 &=& \frac{1}{2\pi i} \int_{C} \dfrac{2s^2 - s - 2}{s-z} ds,
-\eQe 
-for $|z| < 3$. As $g(z) = \int_{C} \dfrac{2s^2 - s - 2}{s-z} ds$, we have
-\eQb
-g(z) = 2\pi i (2z^2 - z - 2),
-\eQe 
-for $|z| < 3$. Hence, it follows that $g(2) = 8\pi i$. For $|z| > 3$,
-we have that $\dfrac{2s^2 - s -2 }{s - z}$ is analytic at all points 
-interior to and on $C$. Hence, by the Cauchy-Goursat theorem, we obtain
-\eQb
-\int_{C} \dfrac{2s^2-s -2}{s-z} dz = 0,
-\eQe 
-for $|z| > 3$. Therefore, $g(z) = 0$ when $|z| > 3$,
-which completes the solution for the problem. $\qed$
-\end{solution}
-
-\bigskip
-
-\begin{question}[3. Brown 170-4]
-\end{question}
-\begin{solution}
-Let $C$ be any simple closed contour, described in the positive sense
-in the $z$ plane. As $s^3 + 2s$ is entire, by the extended Cauchy Integral
-formula, we obtain
-\eQb
-6z &=& \dfrac{2!}{2\pi i} \int_{C} \dfrac{s^3 + 2s}{(s-z)^3i } ds,
-\eQe
-for $z$ at the interior of $C$. 
-As $g(z) = \int_{C} \dfrac{s^3 +2s}{(s-z)^3} ds$, we have 
-\eQb
-g(z) &=& 6\pi i z ,
-\eQe
-for $z$ inside $C$. 
-Now, if $z$ is outside of $C$, then $\dfrac{s^3 + 2s}
-{s-z}$ is analytic at points interior to and on $C$. Hence, by
-the Cauchy-Goursat Theorem, we have that
-\eQb
-\int_{C} \dfrac{s^3 + 2s}{(s-z)^3} ds &=& 0,
-\eQe
-for $z$ outside of $C$. 
-Hence $g(z) = 0$ when $z$ is outside. $\qed$
-\end{solution}
-
-\bigskip
-\begin{question}[4. Brown 170-7]
-\end{question}
-\begin{solution}
-Let $C$ be the unit circle. As $e^{az}$ is entire, by the Cauchy Integral
-formula, we obtain
-\eQb
-e^{az_0} &=& \dfrac{1}{2\pi i} \int_{C} \dfrac{e^{az}}{z - z_0} dz, 
-\eQe
-for $z_0$ inside $C$. By taking $z_0 = 0$, we get
-\eQb
-1 &=& \dfrac{1}{2 \pi i} \int_{C} \dfrac{e^{az}}{z} dz,
-\eQe
-which simplifies to 
-\eQb
-\int_{C} \dfrac{e^{az}}{z} dz &=& 2\pi i. 
-\eQe
-\end{solution}
-
-
-\bigskip
-\begin{question}[5. Brown 170-8]
-\end{question}
-\begin{solution}
-The Legendre polynomials are defined by 
-\eQb
-P_n(z) = \dfrac{1}{2^{n+1}\pi i} \int_{C} 
-\dfrac{(s^2 - 1)^n}{(s-z)^{n+1}} ds,
-\eQe
-for any simple closed contour surrounding $z$. 
-For $z = -1$, and by having $C$ to be any arbitrary 
-simple closed contour that surrounds $z = -1$, it follows that
-\eQb
-P_n(-1) &=& \dfrac{1}{2^{n+1}\pi i} \int_{C}
-\dfrac{(s^2 -1)^n}{(s+1)^{n+1}} ds,
-\eQe
-which, by using the suggestion, simplifies to 
-\eQb
-P_n(z) &=& \dfrac{1}{2^{n+1} \pi i} \int_{C}
-\dfrac{(s-1)^n}{s+1} ds.
-\eQe
-Since $(s-1)^n$ is entire, $(s-1)^n$ is analytic inside and 
-on $C$. Hence, by the Cauchy Integral formula, we have
-\eQb
-(-2)^n 2 \pi i &=& \int_{C} 
-\dfrac{(s-1)^n}{s+1} ds.
-\eQe
-Substituting the above equality into the simplified formula of
-Legendre polynomials yields
-\eQb
-P_n(z) &=& \dfrac{(-2)^n2 \pi i}{2^{n+1}\pi i} \\
-&=& (-1)^n,
-\eQe
-as desired. $\qed$
-
 \end{solution}
 
 \end{document}
