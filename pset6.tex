@@ -240,6 +240,28 @@ This completes the computations. $\qed$
 \begin{question}[1. Brown p.246-5]
 \end{question}
 \begin{solution}
+We wish to evaluate 
+\eQb
+\int_{C} \dfrac{1}{z^3(z+4)} dz,
+\eQe
+for $C$ being the positively oriented circle $|z| = 2$. Clearly,
+the singularities are at $z = 0$ and $z = -4$. 
+The residues of the singularities can be computed as follows:
+\eQb
+\text{Res}_{z=0} \dfrac{1}{z^3(z+4)} = \dfrac{1}{64} 
+\text{Res}_{z=-4} \dfrac{1}{z^3(z+4)} = -\dfrac{1}{64}.
+\eQe 
+For the part $(a)$, we have $z=0$ is the only singularity inside $C$.
+By the residue theorem, we have
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& \dfrac{\pi i}{32}. 
+\eQe
+For the part $(b)$, we have both singularities inside $C$.
+By the residue theorem, we have
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& 0. 
+\eQe
+This completes the computation. $\qed$
 
 \end{solution}
 
