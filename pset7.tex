@@ -173,12 +173,34 @@ Consequently, by the residue theorem, we have
 \begin{question}[3. 254-6]
 \end{question}
 \begin{solution}
+
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. 237-2]
+\begin{question}[1. 264-2]
 \end{question}
 \begin{solution}
+Consider the function $f(z) = \dfrac{1}{(z^2+1)^2}$ and the simple,
+closed, and positively oriented  
+contour of a half-circle above the real-axis, centered around the
+origin with the radius $R > 1$. It follows that
+\eQb
+\int_{-R}^{R} \dfrac{1}{(x^2+1)^2} dx + \int_{C_R} \dfrac{1}{(z^2+1)^2}dz
+&=& 2\pi B,
+\eQe 
+where $C_R$ denotes the contour of the curve part of the half-circle,
+and $B$ is the residue of the complex integrand at $z=i$. For computing
+the residue, we have
+\eQb
+\dfrac{1}{(z^2+1)} &=& \dfrac{\phi(z)}{(z-i)^2},
+\eQe 
+where $\phi(z) = \dfrac{1}{(z+i)^2}$. It follows that $B = \phi^{'}(i) 
+= \dfrac{1}{4i}$. Therefore, we obtain
+\eQb
+\int_{-R}^{R} \dfrac{dx}{(x^2+1)^2} = \dfrac{\pi}{2} - 
+\int_{C_R} \dfrac{1}{(z^2+1)^2} dz.
+\eQe
+For $z$ on $C_R$, we have $|z^2+1| \leq R^2 - 1$. 
 \end{solution}
 \end{document}
