@@ -1,0 +1,379 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips14submit_e,times}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\def\eQb#1\eQe{\begin{eqnarray*}#1\end{eqnarray*}}
+\def\eQnb#1\eQne{\begin{eqnarray}#1\end{eqnarray}}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\providecommand{\pb}[0]{\pagebreak}
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+
+\def\Qb#1\Qe{\begin{question}#1\end{question}}
+\def\Sb#1\Se{\begin{solution}#1\end{solution}}
+
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newtheoremstyle{quest}{\topsep}{\topsep}{}{}{\bfseries}{}{ }{\thmname{#1}\thmnote{ #3}.}
+\theoremstyle{quest}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{question}{Question}
+\newtheorem*{preposition}{Preposition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{challengeproblem}{Challenge Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+\usepackage{verbatimbox}
+\usepackage{listings}
+\title{Complex Analysis I: \\
+Problem Set VI}
+
+
+\author{
+Youngduck Choi \\
+CILVR Lab \\
+New York University\\
+\texttt{yc1104@nyu.edu} \\
+}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+This work contains the solutions to the problem set VI
+of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
+\end{abstract}
+
+\bigskip
+
+\begin{question}[1.]
+\end{question}
+\begin{solution}
+\textbf{(a)}
+We have
+\eQb
+\dfrac{1}{z+z^2} &=& \dfrac{1}{z}\dfrac{1}{1+z} \\
+&=& \dfrac{1}{z} (1 - z +z^2 \dots ) \\
+&=& \dfrac{1}{z} - 1 + z \dots
+\eQe
+for $0 < |z| < 1$.
+The coefficient of $\dfrac{1}{z}$ term is $1$. Hence, the residue 
+at $z = 0$ is
+$1$. \\
+
+\smallskip
+
+\textbf{(b)} 
+We have
+\eQb
+z\cos(\dfrac{1}{z}) &=& z(1 - \dfrac{1}{2!}\dfrac{1}{z^2} + 
+\dfrac{1}{4!}\dfrac{1}{z^4} \dots) \\
+&=& z - \dfrac{1}{2!}\dfrac{1}{z} + \dfrac{1}{4!}\dfrac{1}{z^3} \dots \\
+\eQe
+for $|z| < \infty$. 
+The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue 
+at $z = 0$ is $0$.
+
+\smallskip
+
+\textbf{(c)} 
+We have 
+\eQb
+\dfrac{z - \sin(z)}{z} &=& \dfrac{1}{z}\cdot\dfrac{1}{\sin(z)} \\
+&=& \dfrac{1}{z}(z - (z - \dfrac{z^3}{3!} + \dfrac{z^5}{5!} \dots)) \\
+\eQe
+for $0 < |z| < \infty$. 
+The coefficient of $\dfrac{1}{z}$ term is $0$. Hence, the residue 
+at $z = 0$ is $0$.
+
+\smallskip
+
+\textbf{(d)} 
+We have
+\eQb
+\dfrac{\cot(z)}{z^4} &=& \dfrac{1}{z^4}\cdot \dfrac{\cos(z)}{\sin(z)} \\
+\eQe
+By dividing the Maclaurin 
+series representation of $\cos$ by $\sin$, we obtain
+\eQb
+\dfrac{\cos(z)}{\sin(z)} &=& \dfrac{1}{z} - \dfrac{z}{3} - \dfrac{z^3}{45}
+\dots \\
+\eQe
+for $0 < |z| < \pi$. 
+It follows that
+\eQb
+\dfrac{\cot(z)}{z^4} &=& \dfrac{1}{z^5} - \dfrac{1}{3}\cdot\dfrac{1}{z^3} - 
+\dfrac{1}{45}\cdot\dfrac{1}{z} \dots  
+\eQe
+for $0 < |z| < \pi$. The coefficient of $\dfrac{1}{z}$ is $-\dfrac{1}{45}$.
+Hence, the residue at $z = 0$ is $-\dfrac{1}{45}$.
+
+\smallskip
+
+\textbf{(e)}
+We have
+\eQb
+\dfrac{\sinh(z)}{z^4(1-z^2)} &=& \sinh(z) \cdot \dfrac{1}{z^4} \cdot
+\dfrac{1}{1-z^2} 
+\eQe
+By substituting the Maclaurin series, we obtain
+\eQb
+\dfrac{\sinh(z)}{z^4(1-z^2)} &=&
+\dfrac{1}{z^4}(z + \dfrac{1}{6}z^3 + \dfrac{1}{120}z^5 \dots )
+(1 + z^2 + z^4 \dots) \\
+&=& \dfrac{1}{z^3} + \dfrac{7}{6}\dfrac{1}{z} \dots \\
+\eQe
+The coefficient of $\dfrac{1}{z}$ is $\dfrac{7}{6}$. Hence, the residue
+at $z = 0$ is $\dfrac{7}{6}$. \qed
+\end{solution}
+
+
+\bigskip
+
+\begin{question}[2. Brown p.237-2]
+\end{question}
+\begin{solution}
+By the Cauchy's residue theorem, we can evaluate the integral by
+computing the residues.
+\textbf{(a)} We compute the residue of the integrand at $z = 0$. 
+Using the Laurent series of $\dfrac{\exp(-z)}{z^2}$, we obtain
+\eQb
+\dfrac{\exp(-z^2)}{z^2} &=& \dfrac{1}{z^2}(1- \dfrac{1}{1!}z + 
+\dfrac{1}{2!}z^2 \dots ) \\
+&=& \dfrac{1}{z^2} - \dfrac{1}{1!}\dfrac{1}{z} \dots
+\eQe
+Hence, the residue at $z = 0$ is $-1$. Therefore, by the Cauchy's
+residue theorem, we obtain
+\eQb
+\int_{C} \dfrac{\exp(-z)}{z^2}dz &=& 2\pi i (-1) = -2\pi i.
+\eQe
+
+\smallskip
+
+\textbf{(b)}
+Observe that 
+\eQb
+e^{-z} &=& e^{-1}e^{-(z-1)} \\
+&=& \sum_{k=0}^{\infty} \dfrac{(-1)^n}{n!} \dfrac{1}{e(z-1)^n}.
+\eQe
+Therefore, the coefficient of $\dfrac{1}{z-1}$ is $-\dfrac{1}{e}$.
+Hence, by the residue theorem, we have
+\eQb
+\int_{C}\dfrac{\exp(-z)}{(z-1)^2}dz = -\dfrac{2\pi i}{e},
+\eQe
+for $C$ being the positively oriented circle $|z| = 3$. 
+
+\smallskip
+
+\textbf{(c)}
+Observe that
+\eQb
+z^2\exp(\dfrac{1}{z}) &=& z^2(1+\dfrac{1}{1!z} + 
+\dfrac{1}{2!z^2} + \dfrac{1}{3!z^3} ... ) \\
+\eQe
+for $0 < |z| < \infty$. The coefficient of $\dfrac{1}{z}$ term is
+$\dfrac{1}{6}$. Hence, by the residue theorem, we have
+\eQb
+\int_{C}\dfrac{\exp(-z)}{(z-1)^2}dz = \dfrac{\pi i}{3}.
+\eQe
+\smallskip
+
+\textbf{(d)} 
+Observe that the singularities happen at $z = 0$ and $z = 2$. Using poles,
+we have
+\eQb
+\text{Res}_{z=0}\dfrac{z+1}{z(z-2)} &=& \dfrac{-1}{2}  \\
+\text{Res}_{z=2}\dfrac{z+1}{z(z-2)} &=& \dfrac{3}{2}.
+\eQe 
+Hence, by the residue theorem, we have
+\eQb
+\int_{C} \dfrac{z+1}{z^2-2z} dz = 2\pi i,
+\eQe
+for the given contour. $\qed$ 
+
+\smallskip
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[3. Brown p.242-1]
+\end{question}
+\begin{solution}
+Simple computations show the following results:
+\textbf{(a)}
+$z = 0$ is essential singular point, and the principal part 
+is $\dfrac{1}{2!}\dfrac{1}{z} + \dfrac{1}{3!}\dfrac{1}{z^2} \dots$.
+
+\smallskip
+
+\textbf{(b)}
+$z = -1$ is the singular point with the principal part being $\dfrac{1}{z+1}$.
+$z = -1$ is a simple pole.
+
+\smallskip
+
+\textbf{(c)}
+$z = 0$ is the singular point with the $0$ principal part. $z=0$ is removable.
+
+\smallskip
+
+\textbf{(d)}
+$z = 0$ is the singular point with the principal part $\dfrac{1}{z}$. 
+$z = 0$ is a simple pole.
+
+\smallskip
+
+\textbf{(e)}
+$z=2$ is the singular point and the principal part is the given function 
+itself. It is a pole of order $3$. $\qed$
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[4. Brown p.246-2]
+\end{question}
+\begin{solution}
+\textbf{(a)} Observe that
+\eQb
+f(z) &=& \dfrac{\phi(z)}{z+1},
+\eQe
+where $\phi(z) = z^{\frac{1}{4}}$. It follows that
+\eQb
+\text{Res}_{z=-1}f(z) &=& \phi(-1) = \dfrac{1+i}{\sqrt{2}}.
+\eQe
+
+\smallskip
+
+\textbf{(b)} Observe that
+\eQb
+\dfrac{\text{Log}(z)}{(z^2+1)^2} &=& \dfrac{\phi(z)}{(z-i)^2}, 
+\eQe
+where $\phi(z) = \dfrac{\text{Log}(z)}{(z+i)^2}$. It follows that
+\eQb
+\text{Res}_{z=i} \dfrac{\text{Log}(z)}{(z^2+1)^2} &=& \phi^{'}(i) \\
+&=& \dfrac{\pi + 2i}{8}.
+\eQe
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[5. Brown p.246-4]
+\end{question}
+\begin{solution}
+We wish to evaluate 
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz,
+\eQe
+for $C$ being the circle $|z-2| = 2$, taken in the counterclockwise direction.
+Clearly, the singularities of the integrand are $1$ and $\pm 3i$.
+The residues at the singularities can be computed as follows:
+\eQb
+\text{Res}_{z=1} \dfrac{3z^3+2}{(z-1)(z^2+9)} &=& 
+\dfrac{3z^3+2}{z^2+9}]_{z=1} = \dfrac{1}{2} \\
+ \text{Res}_{z=3i} \dfrac{3z^3+2}{(z-1)(z^2+9)} &=& 
+\dfrac{3z^3+2}{(z-1)(z+3i)}]_{z=3i} = \dfrac{15+49i}{12} \\
+\text{Res}_{z=-3i} \dfrac{3z^3+2}{(z-1)(z^2+9)} &=& 
+\dfrac{3z^3+2}{(z-1)(z-3i)}]_{z=-3i} = \dfrac{15-49i}{12}. \\
+\eQe 
+For the part $(a)$, we have $z=1$ is the only singularity inside $C$. 
+Hence, by Cauchy's residue theorem, we have
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& \pi i.
+\eQe
+For the part $(b)$, we have all singularities inside $C$. It follows that
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& 2\pi i(\dfrac{1}{2} 
++ \dfrac{15+49i}{12} + \dfrac{15-49i}{12}) = 6\pi i.
+\eQe
+This completes the computations. $\qed$ 
+\end{solution}
+
+\bigskip
+
+\begin{question}[1. Brown p.246-5]
+\end{question}
+\begin{solution}
+We wish to evaluate 
+\eQb
+\int_{C} \dfrac{1}{z^3(z+4)} dz,
+\eQe
+for $C$ being the positively oriented circle $|z| = 2$. Clearly,
+the singularities are at $z = 0$ and $z = -4$. 
+The residues of the singularities can be computed as follows:
+\eQb
+\text{Res}_{z=0} \dfrac{1}{z^3(z+4)} = \dfrac{1}{64} \\ 
+\text{Res}_{z=-4} \dfrac{1}{z^3(z+4)} = -\dfrac{1}{64}.
+\eQe 
+For the part $(a)$, we have $z=0$ is the only singularity inside $C$.
+By the residue theorem, we have
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& \dfrac{\pi i}{32}. 
+\eQe
+For the part $(b)$, we have both singularities inside $C$.
+By the residue theorem, we have
+\eQb
+\int_{C} \dfrac{3z^2 + 2}{(z-1)(z^2+9)} dz &=& 0. 
+\eQe
+This completes the computation. $\qed$
+
+\end{solution}
+
+\pagebreak
+
+\begin{question}[1. Brown p.246-6]
+\end{question}
+\begin{solution}
+We wish to evaluate 
+\eQb
+\int_{C} \dfrac{\cosh(\pi z)}{z(z^2+1)} dz
+\eQe
+where $C$ is the circle $|z| = 2$, described in the positive sense. 
+The singularities of the integrand, that are interior to $C$,
+are $0, \pm i$. The residues are respectively
+\eQb
+\dfrac{\cosh(\pi z)}{z^2 +1}|_{z = 0} &=& 1 \\
+\dfrac{\cosh(\pi z)}{z(z+i)}|_{z=i} &=& \dfrac{1}{2} \\
+\dfrac{\cosh(\pi z)}{z(z-i)}|_{z=-i} &=& \dfrac{1}{2}.
+\eQe 
+Hence, by the Cauchy residue theorem, we have
+\eQb
+\int_{C} \dfrac{\cosh(\pi z)}{z(z^2+1)} dz = 4\pi i,
+\eQe
+as desired. $\qed$
+\end{solution}
+
+\end{document}
