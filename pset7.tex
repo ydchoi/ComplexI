@@ -77,21 +77,100 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 
 \bigskip
 
-\begin{question}[1. 237-2]
+\begin{question}[1. 247-7]
 \end{question}
 \begin{solution}
+\textbf{(a)} Observe that
+\eQb
+\dfrac{1}{z^2}f(\dfrac{1}{z}) &=& \dfrac{(3+2z)^2}{z(1-z)(2+5z)}.
+\eQe
+As $\dfrac{1}{z^2}f(\dfrac{1}{z})$ has a simple pole at $z = 0$, we have
+\eQb
+\int_{C} \dfrac{(3+2z)^2}{z(z-1)(2z+5)}dz &=& 2\pi i \cdot 
+\text{Res}_{z=0} [\dfrac{1}{z^2}f(\dfrac{1}{z})] \\
+&=& 2\pi i \cdot \dfrac{9}{2}  
+= 9\pi i.
+\eQe
+
+\smallskip
+
+\textbf{(b)} Observe that
+\eQb
+\dfrac{1}{z^2}f(\dfrac{1}{z}) = \dfrac{e^z}{z^2(1+z^3)}.  
+\eQe
+As $\dfrac{1}{z^2}f(\dfrac{1}{z})$ has a pole of order $2$ at $z = 0$,
+we have
+\eQb
+\int_{C} \dfrac{z^3 e^{\frac{1}{z}}}{1+z^3} dz &=& 2\pi i 
+\cdot \text{Res}_{z = 0}[\dfrac{1}{z^2}f(\dfrac{1}{z})],
+\eQe
+where $\phi(z) = \dfrac{e^z}{1+z^3}$. We have
+\eQb
+\phi^{'}(z) &=& \dfrac{(1+z^3)e^z - e^z 3z^2}{(1+z^3)^2}. 
+\eQe
+By substituting $z = 0$, we see that $\phi^{'}(0) = 1$, which is the residue
+at $z = 0$. It follows that 
+\eQb
+\int_{C} \dfrac{z^3 e^{\frac{1}{z}}}{1+z^3} dz &=& 2\pi i. 
+\eQe
+\qed
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. 237-2]
+\begin{question}[2. 254-5]
 \end{question}
 \begin{solution}
+\textbf{(a)}
+The given integral can be written as
+\eQb
+\int_{C} \tan(z) dz &=& \int_{C} \dfrac{p(z)}{q(z)} dz \\ 
+&=& \int_{C} \dfrac{\sin(z)}{\cos(z)} dz.
+\eQe
+As the zeros of $\cos(z)$ are $z = \dfrac{\pi}{2} + n\pi$ and $C$ is
+the positively oriented circle $|z| = 2$, there are two isolated singularities
+of $\tan(z)$ interior to $C$, namely $z = \pm \dfrac{\pi}{2}$. It follows
+that
+\eQb
+\text{Res}_{z = \frac{\pi}{2}} \tan(z) &=& 
+\dfrac{p(\frac{\pi}{2})}{q^{'}(\frac{\pi}{2})} 
+= \dfrac{\sin(\frac{\pi}{2})}{-\sin(\frac{\pi}{2})} = -1, \\ 
+\text{Res}_{z = \frac{-\pi}{2}} \tan(z) &=& 
+\dfrac{p(\frac{-\pi}{2})}{q^{'}(\frac{-\pi}{2})} 
+= \dfrac{\sin(\frac{-\pi}{2})}{-\sin(\frac{-\pi}{2})} = -1. \\
+\eQe
+Consequently, by the residue theorem, we have
+\eQb
+\int_{C} \tan(z) dz &=& -4\pi i.
+\eQe
+
+\smallskip
+
+\textbf{(b)} 
+We wish to evaluate the integral $\int_{C} \dfrac{dz}{\sinh(2z)}$. 
+As $\sinh(z) = 0$ for $\dfrac{n\pi i}{2}$, we can conclude that
+the isolated singularities of the integrand happens at $z = 0$ and
+$z = \pm \dfrac{\pi i}{2}$. It follows that
+\eQb
+\text{Res}_{z=0} \dfrac{1}{\sinh(2z)} &=& \dfrac{1}{2\cosh(0)} 
+= \dfrac{1}{2} \\
+\text{Res}_{z=\frac{\pi i}{2}} 
+\dfrac{1}{\sinh(2z)} &=& \dfrac{1}{2\cosh(\pi i)} 
+= -\dfrac{1}{2} \\
+\text{Res}_{z=-\frac{\pi i}{2}} 
+\dfrac{1}{\sinh(2z)} &=& \dfrac{1}{2\cosh(-\pi i)} 
+= -\dfrac{1}{2} \\
+\eQe
+Consequently, by the residue theorem, we have
+\eQb
+\int_{C} \dfrac{1}{\sinh(2z)} dz = -\pi i.
+\eQe
+\qed
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. 237-2]
+\begin{question}[3. 254-6]
 \end{question}
 \begin{solution}
 \end{solution}
