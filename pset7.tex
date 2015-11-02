@@ -173,12 +173,46 @@ Consequently, by the residue theorem, we have
 \begin{question}[3. 254-6]
 \end{question}
 \begin{solution}
+Observe that interior to $C_N$, the function $\dfrac{1}{z^2\sin(z)}$ 
+has singularities at $z = 0$ and $z = \pm n\pi$ for $n = 1,2,...,N$.
+The residue at $z=0$ can be found by finding the $\dfrac{1}{z}$ coefficient
+of $\dfrac{1}{z^2\sin(z)}$, which was found to be $\dfrac{1}{6}$ in a 
+previous homework problem. For the residues at $z = \pm n \pi$ for 
+$n = 1,2,...,N$, we have
+\eQb
+\dfrac{1}{z^2\sin(z)} = \dfrac{p(z)}{q(z)} \> \text{where} \>
+p(z) = 1 , q(z) = z^2 \sin (z).
+\eQe
+As $q^{'}(z) = z^2cos(z)$, we have for $z = \pm n\pi$, we have
+$q^{'}(\pm n\pi) = (-1)^{n}n^{2}\pi^{2}$. By the residue theorem, it follows
+that
+\eQb
+\int_{C_N} \dfrac{1}{z^2\sin(z)}dz &=& 2\pi i [\dfrac{1}{6} + 
+2 \sum_{n=1}^{N} \dfrac{(-1)^n}{n^2 \pi^2} ],
+\eQe 
+which can be re-written as
+\eQb
+\sum_{n=1}^{N} \dfrac{(-1)^{n+1}}{n^2} = \dfrac{\pi^2}{12} 
+- \dfrac{\pi}{4i} \int_{C_N} \dfrac{1}{z^2\sin(z)}dz.
+\eQe
+We have that as $N \to \infty$, the integral goes to $0$. Therefore,
+it follows that
+\eQb
+\sum_{n=1}^{\infty} \dfrac{(-1)^{n+1}}{n^2} = \dfrac{\pi^2}{12}. 
+\eQe
+$\qed$
 
 \end{solution}
 
 \bigskip
 
-\begin{question}[1. 264-2]
+\begin{question}[254-8]
+\end{question}
+\begin{solution}
+
+\end{solution}
+
+\begin{question}[264.2]
 \end{question}
 \begin{solution}
 Consider the function $f(z) = \dfrac{1}{(z^2+1)^2}$ and the simple,
@@ -201,6 +235,120 @@ where $\phi(z) = \dfrac{1}{(z+i)^2}$. It follows that $B = \phi^{'}(i)
 \int_{-R}^{R} \dfrac{dx}{(x^2+1)^2} = \dfrac{\pi}{2} - 
 \int_{C_R} \dfrac{1}{(z^2+1)^2} dz.
 \eQe
-For $z$ on $C_R$, we have $|z^2+1| \leq R^2 - 1$. 
+For $z$ on $C_R$, we have $|z^2+1| \geq R^2 - 1$. Therefore, we have
+\eQb
+\left| \int_{C_R} \dfrac{1}{(z^2+1)^2} dz \right| 
+\leq \dfrac{\pi R}{(R^2 -1)^2}.
+\eQe 
+Consequently, we have as $R \to \infty, \dfrac{\pi R}{(R^2-1)^2} \to 0$. 
+It follows that 
+\eQb
+\int_{-\infty}^{\infty} \dfrac{1}{(x^2+1)^2}dx &=& \dfrac{\pi}{2}. \\ 
+\eQe 
+As the integrand is an even function, we obtain that
+\eQb
+\int_{0}^{\infty} \dfrac{1}{(x^2+1)^2} dx = \dfrac{\pi}{4}. \\
+\eQe
+\qed
 \end{solution}
+
+\begin{question}[264.6]
+\end{question}
+\begin{solution}
+Consider the function $f(z) = \dfrac{z^2}{(z^2+9)(z^+4)^2}$ and the simple,
+closed, and positively oriented  
+contour of a half-circle above the real-axis, centered around the
+origin with the radius $R > 3$. It follows that
+\eQb
+\int_{-R}^{R} \dfrac{x^2}{(x^2+9)(z^2+4)^2} dx +
+\int_{C_R} \dfrac{z^2}{(z^2+9)(z^2+4)^2}dz
+&=& 2\pi (B_1 + B_2).
+\eQe 
+where $C_R$ denotes the contour of the curve part of the half-circle,
+and $B_1$ and $B_2$ are the residues
+ of the complex integrand at $z=3i$ and $z=zi$ respectively. 
+First, observe that
+\eQb
+B_1 &=& \text{Res}_{z=3i} \dfrac{z^2}{(z^2+9)(z^2+4)^2} \\
+&=& \dfrac{z^2}{(z+3i)(z^2+4)^2}\|_{z=3i} = -\dfrac{3}{50i}.
+\eQe
+For computing the $B_2$ term, observe that
+\eQb
+\dfrac{z^2}{(z^2+9)(z^2+4)^2} &=& \dfrac{\phi(z)}{(z-2i)^2}, \\
+&\text{where}& \\
+\phi(z) &=& \dfrac{z^2}{(z^2+9)(z+2i)^2}.
+\eQe
+It follows that 
+\eQb
+B_2 &=& \phi^{'}(2i) = \dfrac{13}{200i}.
+\eQe
+Hence, we have
+\eQb
+\int_{-R}^{R} \dfrac{x^2}{(x^2+9)(z^2+4)^2} dx 
+&=& \dfrac{\pi}{100} - \int_{C_R} \dfrac{z^2}{(z^2+9)(z^2+4)^2}dz .
+\eQe
+Observe that
+\eQb
+\left| \int_{C_R} \dfrac{z^2}{(z^2+9)(z^2+4)^2} \right| &\leq& 
+\dfrac{R^2}{(R^2-9)(R^2-4)^2}\pi R
+\eQe
+The RHS of the inequality goes to $0$ as $R \to \infty$. With the fact
+that the integrand is even, we finally obtain
+\eQb
+\int_{0}^{\infty} \dfrac{x^2}{(x^2+9)(x^2+4)^2} dx = \dfrac{\pi}{200}.
+\eQe
+\qed
+\end{solution}
+
+\bigskip
+
+\begin{question}[264.8]
+\end{question}
+\begin{solution}
+Consider the function $f(z) = \dfrac{z}{(z^2+1)(x^2+2x+2)}$, and the
+simple, closed, and positively oriented contour of a semi-circle with the
+radius strictly larger than $\sqrt(2)$ and the center of the circle at the
+origin. It follows that the isolated singularities are at $z = i$ and
+$z = -1 +i$. By the residue theorem, it follows that
+\eQb
+\int_{-R}^{R} f(x)dx + \int_{C_R} f(z) dz &=& 2\pi i(B_0 + B_1),
+\eQe
+where $B_0$ and $B_1$ are the residues at the singularities respectively.
+It follows that
+\eQb
+B_0 &=& \text{Res}_{z = i}f(z) \\
+&=& [\dfrac{z}{(z+i)(z^2 + 2z + 2)}]_{z=i} = \dfrac{1}{10} - \dfrac{1}{5}i \\
+B_1 &=& \text{Res}_{z= -1 +i} f(z) \\
+&=& [\dfrac{z}{(z^2+1)(z+1+i})]_{z = -1 +i} = -\dfrac{1}{10} -\dfrac{3}{10}i. 
+\\
+\eQe
+By the residue theorem, we obtain
+\eQb
+\int_{-R}^{R} \dfrac{x}{(x^2+1)(x^2+2x+2)} dx
+&=& -\dfrac{\pi}{5} - \int_{C_N} \dfrac{z}{(z^2+1)(z^2+2z+2)}. \\
+\eQe
+Observe that by the RL-inequality,
+\eQb
+\left| \int_{C_R} \dfrac{z}{(z^2+1)(z^2+2z+2)} \right| 
+&\leq& \dfrac{\pi R^2}{(R^2-1)(R-\sqrt{2})^2}.
+\eQe
+Hence, the integral over the $C_N$ contour tends to $0$, has $R \to \infty$.
+Therefore, we have
+\eQb
+\lim_{R \to \infty} \int_{-R}^{R} \dfrac{x}{(x^2+1)(x^2+2x+2)} 
+&=& -\dfrac{\pi}{5}.
+\eQe
+\qed
+
+\end{solution}
+
+\bigskip
+
+\begin{question}[264.9]
+\end{question}
+\begin{solution}
+Observe that interior to 
+\end{solution}
+
+
 \end{document}
