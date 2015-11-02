@@ -344,11 +344,57 @@ Therefore, we have
 
 \bigskip
 
-\begin{question}[264.9]
+\begin{question}[272.2]
 \end{question}
 \begin{solution}
-Observe that interior to 
+We wish to evaluate $\int_0^{\infty} \dfrac{\cos(ax)}{x^2+1}dx$.
+Consider the function $f(z) = \dfrac{1}{z^2+1}$ with a semi-circle
+contour above the real-axis of the radius $R > 1$. Observe that
+the singularity interior to the contour is at $z = i$. 
+It follows that the residue at $z=i$ can be computed as 
+\eQb
+B &=& \text{Res}_{z = i} [f(z)e^{iaz}] = \dfrac{e^{iaz}}{z+i}]_{z=i}\\
+&=& \dfrac{e^{-a}}{2i}.
+\eQe
+By the residue theorem, it follows that
+\eQb
+\int_{-R}^{R} \dfrac{\cos(ax)}{x^2+1}dx &=& 
+\pi e^{-a} - \text{Re} \int_{C_R} f(z)e^{iaz}dz.
+\eQe
+Observe that
+\eQb
+\left| \text{Re} \int_{C_R} f(z)e^{iaz}dz \right|
+&\leq& \left| \int_{C_R} f(z)e^{iaz}dz \right| \\
+&\leq& \dfrac{\pi R}{R^2-1}. \\
+\eQe
+As $\dfrac{\pi R}{R^2 - 1}$ tends to $0$ as $R \to \infty$,
+by the Jordan's Lemma, we obtain 
+\eQb
+\int_{-\infty}^{\infty} \dfrac{\cos(ax)}{x^2+1}dx &=& \pi e^{-a}.
+\eQe
+\hfill $\qed$
 \end{solution}
 
+\bigskip
 
+\begin{question}[272.7]
+\end{question}
+\begin{solution}
+We wish to evaluate $\int_{0}^{\infty} \dfrac{x^3 \sin(x)}{(x^2+1)(x^2+9)}$.
+Consider the function $f(z) = \dfrac{z^3}{(z^2+1)(z^2+9)}$ with a semi-circle
+contour around the origin above the real-axis of the radius $R>3$. 
+Observe that singularities occur at $z = i$ and $z = 3i$. It follows that
+\eQb
+\text{Res}_{z=i} [f(z)e^{iz}] &=& \dfrac{z^3 e^{iz}}{(z+i)(z^2+9)}]_{z=i} \\
+&=& -\dfrac{1}{16e}, \\
+\text{Res}_{z=3i} [f(z)e^{iz}] &=& \dfrac{z^3e^{iz}}{(z^2+1)(z+3i)}_{z=3i} \\
+&=& \dfrac{9}{16e^3}. \\ 
+\eQe 
+By the residue theorem and the Jordan's Lemma, applied as above, we have
+\eQb
+\int_{-\infty}^{\infty} \dfrac{x^3\sin(x)}{(x^2+1)(x^2+9)} dx 
+&=& \dfrac{\pi}{8e}(\dfrac{9}{e^2}-1). \\
+\eQe
+\hfill $\qed$
+\end{solution}
 \end{document}
