@@ -105,10 +105,10 @@ contour in figure 108, by Cauchy-Goursat theorem, we obtain
 Observe that on $L_1$ and $L_2$, we have the following parametric
 representations:
 \eQb
-L_1 : z = re^{i0} = r (\rho \leq r \leq R) \text{ and } 
--L_2 : z = re^{i\pi} = -r (\rho \leq r \leq R)
+L_1 : z = re^{i0} = r (\rho \leq r \leq R) \> \text{ and } 
+-L_2 : z = re^{i\pi} = -r (\rho \leq r \leq R).
 \eQe
-Consequently, it follows that
+It follows that
 \eQb
 \int_{L_1} f(z) dz + \int_{L_2} f(z) dz &=& 
 \int_{L_1} f(z)dz - \int_{-L_2} f(z) dz \\
@@ -118,7 +118,10 @@ Consequently, it follows that
 (e^{ibr} + e^{-ibr})}{r^2} dr \\
 &=& 2\int_{\rho}^{R} \dfrac{\cos(ar) - \cos(br)}{r^2} dr.
 \eQe
+Therefore, we obtain
+\eQb
 
+\eqe
 \end{solution}
 
 \bigskip
@@ -206,7 +209,30 @@ $z^7 - 4z^3 + z - 1$ has 3 zeroes inside the circle $|z| = 1$.
 \begin{question}[293-8]
 \end{question}
 \begin{solution}
-
+Inside the circle $|z| = 2$, write
+\eQb
+f(z) = 2z^5 \> \text{ and } \> g(z) = 6z^2 + z + 1.
+\eQe
+Then, observe that when $|z| = 2$,
+\eQb
+|f(z)| = 2|z|^5 = 64 \> \text{ and } |g(z)| \leq 6|z|^2 + |z| + |1| = 8.
+\eQe
+The conditions of Rouche's theorem are thus satisfied. Consequently, since
+$f(z)$ has 5 zeroes, counting multiplicities, inside the circle $|z| = 2$,
+$f(z) + g(z)$ has 5 zeroes. On the other hand, inside the circle $|z| = 1$,
+write
+\eQb
+f(z) = -6z^2 \> \text{ and } \> g(z) = 2z^5 + z + 1.
+\eQe
+Then, observe that when $|z| = 1$,
+\eQb
+|f(z)| = 6|z|^2 = 6 \> \text{ and } |g(z)| \leq 2|z|^5 + |z| + 1 = 4.
+\eQe
+The conditions of Rouche's theorem are thus satisfied. Consequently, since
+$f(z)$ has 2 zeroes, counting multiplicities, inside the circle $|z| = 1 $,
+$f(z) + g(z)$ has 2 zeroes. Therefore, we have shown that
+in the annulus $1 \leq |z| \leq 2$, we have $5 - 2 = 3$ zeroes. 
+\hfill $\qed$
 \end{solution}
 
 \end{document}
