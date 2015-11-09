@@ -112,8 +112,38 @@ We can parametrize the points on $C_R$ as $z = Re^{i\theta} ( 0 \leq
 \theta \leq \dfrac{\pi}{4} )$. It follows that
 \eQb
 \int_{C_R} e^{iz^2} &=& \int_{0}^{\frac{\pi}{4}} e^{iR^2e^{i2\theta}}R
-ie^{i\theta} d\theta 
+ie^{i\theta} d\theta \\
+&=& 
+iR \int_{0}^{\frac{\pi}{4}} e^{-R^2\sin(2\theta)} e^{iR^2\cos(2\theta)}
+e^{i\theta} d\theta. \\ 
 \eQe
+Consequently, we have
+\eQb
+\left| \int_{C_R} e^{iz^2} \right| &=& 
+\left| iR \int_{0}^{\frac{\pi}{4}} e^{-R^2\sin(2\theta)} 
+e^{iR^2\cos(2\theta)} e^{i\theta} d\theta \right| \\ 
+&\leq& 
+R \int_{0}^{\frac{\pi}{4}} \left| e^{-R^2\sin(2\theta)} \right|
+\left| e^{iR^2\cos(2\theta)} \right| 
+\left|  e^{i\theta} \right| d\theta \\ 
+&=&
+R \int_{0}^{\frac{\pi}{4}} \left| e^{-R^{2}\sin(2\theta)} \right|
+d\theta \\
+&=&
+R \int_{0}^{\frac{\pi}{4}} e^{-R^{2}\sin(2\theta)}
+d\theta \\
+&=& \dfrac{R}{2} 
+\int_{0}^{\frac{\pi}{2}} e^{-R^2\sin(\phi)} 
+d\theta , \\ 
+\eQe
+by change of variable $\phi = 2\theta$.
+From Jordan's lemma in section 88, pg. 271, continues to 
+\eQb
+\left| \int_{C_R} e^{iz^2} \right| &\leq & \dfrac{R}{2}\dfrac{\pi}{2R^2} \\
+&=& \dfrac{\pi}{4R}, 
+\eQe
+which limits $0$ as $R \to \infty$. Hence, the integral limits $0$ as
+$R \to \infty$. 
 \hfill $\qed$
 
 \smallskip
@@ -160,7 +190,46 @@ It follows that
 (e^{ibr} + e^{-ibr})}{r^2} dr \\
 &=& 2\int_{\rho}^{R} \dfrac{\cos(ar) - \cos(br)}{r^2} dr.
 \eQe
-Therefore, we obtain
+Now, writing the Laurent series of $f(z)$ gives
+\eQb
+f(z) &=& \dfrac{e^{iaz}-e^{ibz}}{z^2} \\ 
+&=& \dfrac{1}{z^2}\left[ \left( 1 + \dfrac{iaz}{1!} 
++ \dfrac{(iaz)^2}{2!} ... \right) + \left( 1 + \dfrac{ibz}{1!}
++ \dfrac{(ibz)^2}{2!} ... \right) \right] \\
+&=& \dfrac{i(a-b)}{z} + ... \\ 
+\eQe
+Therefore, we see that $z=0$ is a simple pole of $f(z)$ and the residue 
+$B_0$ equals $i(a-b)$. Consequently, we obtain that
+\eQb
+\lim_{\rho \to 0}  \int_{C_\rho} f(z)dz = -i(a-b)\pi i = \pi(a-b).
+\eQe
+Observe that 
+\eQb
+|f(z)| \leq \dfrac{|e^{iaz}| + e^{ibz}}{|z|^2}.
+\eQe
+For $z$ on $C_R$, we have
+\eQb
+|f(z)| \leq \dfrac{2}{R^2}.
+\eQe
+Therefore, by $ML$ inequality, it follows that
+\eQb
+\left| \int_{C_R} f(z) dz \right| &\leq&
+\int_{C_R} \left| f(z) \right| dz  \\ 
+&\leq& \dfrac{2}{R^2}\pi R \\
+&=& \dfrac{2\pi}{R}. 
+\eQe
+Therefore, as $R \to \infty$ $\dfrac{2\pi}{R} \to 0$, the integral
+$\int_{C_R} f(z) dz$ tends to $0$ as $R \to \infty$. Consequently,
+\eQb
+\int_{0}^{\infty} \dfrac{\cos(ar) - \cos(br)}{r^2} dr &=& \dfrac{\pi}{2}
+(b-a). 
+\eQe
+Setting $b=2$ and $a=0$ and using the identity $1 - \cos(2x) =
+2\sin^2(x)$ , we finally obtain
+\eQb
+\int_{0}^{\infty} \dfrac{\sin^{2}(x)}{x^2} dx &=& \dfrac{\pi}{2}, 
+\eQe
+as desired. $\qed$
 \end{solution}
 
 \bigskip
