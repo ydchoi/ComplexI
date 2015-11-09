@@ -138,6 +138,43 @@ From the example 1 from pg.285 in the section 92, it follows that
 
 \bigskip
 
+\begin{question}[287-6]
+\end{question}
+\begin{solution}
+As $|\sin(-\pi+\theta)| = |\sin(\theta)|$, we have $\sin^{2n}(\theta) 
+= \sin^{2n}(-\pi + \theta)$, and
+$\int_{0}^{\pi}\sin^{2n}(\theta) d\theta = \int_{-\pi}^{0} \sin^{2n}(\theta)
+d\theta$. Hence, it follows that
+\eQb
+\int_{0}^{\pi} \sin^{2n}(\theta) d\theta &=& \dfrac{1}{2}\int_{C}
+\sin^{2n}(\theta), \\
+\eQe 
+where $C$ is the positively oriented unit circle $|z| = 1$. Substituting
+$\dfrac{z - z^{-1}}{2i}$ for $\sin(\theta)$, using the binomial formula,
+and linearity of integration, we obtain
+\eQb
+\dfrac{1}{2}\int_{C} \sin^{2n}(\theta) &=& 
+\dfrac{1}{2}\int_{C} {\left( \dfrac{z - z^{-1}}{2i} \right)
+}^{2n} \dfrac{dz}{iz} \\
+&=& \dfrac{1}{2^{2n+1}(-1)^n i} \int_{C} \dfrac{(z-z^{-1})^{2n}}{z} dz \\
+&=& \dfrac{1}{2^{2n+1}(-1)^{n} i} \int_{C} \sum_{k=0}^{n} 
+\binom{2n}{k}z^{k}z^{2n-k}{(-z^{-1})}^{k}z^{-1} dz \\
+&=& \dfrac{1}{2^{2n+1}(-1)^{n} i} \sum_{k=0}^{n} \binom{2n}{k}
+(-1)^k \int_{C} z^{2n-2k-1}dz. 
+\eQe
+Observe that we only get non-zero integral value for $k = n$ case,
+and $\int_{C} z^{-1} dz = 2\pi i$. Therefore, it follows that
+\eQb
+\int_{0}^{\pi} \sin^{2n}(\theta ) d\theta &=& 
+\dfrac{1}{2^{2n+1}(-1)^{n} i} \dfrac{(2n)!}{n! n!} (-1)^n 2\pi i \\
+&=& \dfrac{2n!}{2^{2n} (n!)^2}\pi,
+\eQe
+as desired. \hfill $\qed$
+
+\end{solution}
+
+\bigskip
+
 \begin{question}[293-6]
 \end{question}
 \begin{solution}
