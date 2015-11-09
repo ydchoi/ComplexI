@@ -93,6 +93,36 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 
 \bigskip
 
+\begin{question}[1. 278-1]
+\end{question}
+\begin{solution}
+Let $f(z) = \dfrac{e^{iaz} - e^{ibz}}{z^2}$. On the indented
+contour in figure 108, by Cauchy-Goursat theorem, we obtain
+\eQb
+\int_{L_1} f(z) dz + \int_{L_2} f(z) dz &=& -\int_{C_{\rho}} f(z) dz
+- \int_{C_R} f(z) dz. \\
+\eQe
+Observe that on $L_1$ and $L_2$, we have the following parametric
+representations:
+\eQb
+L_1 : z = re^{i0} = r (\rho \leq r \leq R) \text{ and } 
+-L_2 : z = re^{i\pi} = -r (\rho \leq r \leq R)
+\eQe
+Consequently, it follows that
+\eQb
+\int_{L_1} f(z) dz + \int_{L_2} f(z) dz &=& 
+\int_{L_1} f(z)dz - \int_{-L_2} f(z) dz \\
+&=& \int_{\rho}^{R} \dfrac{e^{iar} - e^{ibr}}{r^2} dr 
++ \int_{\rho}^{R} \dfrac{e^{-iar}- e^{-ibr}}{r^2} dr \\
+&=& \int_{\rho}^{R} \dfrac{(e^{iar} + e^{-iar}) -
+(e^{ibr} + e^{-ibr})}{r^2} dr \\
+&=& 2\int_{\rho}^{R} \dfrac{\cos(ar) - \cos(br)}{r^2} dr.
+\eQe
+
+\end{solution}
+
+\bigskip
+
 \begin{question}[287-1]
 \end{question}
 \begin{solution}
@@ -130,14 +160,28 @@ Then, observe that when $|z| = 1$,
 \eQe
 The conditions of Rouche's theorem are thus satisfied. Consequently, 
 since $f(z)$ has 4 zeroes, counting multiplicities, inside the circle $|z| 
-=1$, $f(z) + g(z)$ has 4 zeroes. Therefore, the polynomial $z^6 -
-5z^4 + z^3 - 2z$ has 4 zeroes inside the circle $|z| = 1$.
+=1$, $f(z) + g(z)$ has 4 zeroes, inside the circle $|z| = 1$.
+Therefore, the polynomial $z^6 -
+5z^4 + z^3 - 2z$ has 4 zeroes, inside the circle $|z| = 1$.
 \hfill $\qed$
 
 \smallskip
 
 \textbf{(b)}
-Inside the cirlce 
+Inside the circle $|z| = 1$, write
+\eQb
+f(z) = 9 \> \text{ and } \> g(z) = 2z^4 - 2z^3 + 2z^2 - 2z.
+\eQe 
+Then, observe that when $|z| = 1$,
+\eQb
+|f(z)| = 9 \> \text{ and } \> |g(z)| = 2|z|^4 + 2|z|^3 + 2|z|^2 + 2|z| = 8.
+\eQe
+The conditions of Rouche's theorem are thus satisfied. Consequently,
+since $f(z)$ has 0 zero, counting multiplicities, inside the circle $|z| = 1$,
+$f(z) + g(z)$ has 0 zero, inside the circle $|z| = 1$. Therefore, 
+the polynomial $2z^4 - 2z^3 + 2z^2 - 2z + 9$ has 0 zero, inside
+the circle $|z| = 1$.
+\hfill $\qed$
 
 \smallskip
 \textbf{(c)} 
@@ -147,7 +191,7 @@ f(z) = -4z^3 \> \text{ and } \> g(z) = z^7 + z - 1.
 \eQe
 Then, observe that when $|z| = 1$, 
 \eQb
-|f(z)| = 4|z|^3 = 4 \> \text{ and } g(z) \leq |z|^7 + |z| - 1 = 1.
+|f(z)| = 4|z|^3 = 4 \> \text{ and } |g(z)| \leq |z|^7 + |z| - 1 = 1.
 \eQe
 The conditions of Rouche's theorem are thus satisfied. Consequently,
 since $f(z)$ has 3 zeroes, counting multiplicities, inside the circle
