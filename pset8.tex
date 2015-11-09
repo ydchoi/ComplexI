@@ -80,6 +80,56 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \begin{question}[273-12]
 \end{question}
 \begin{solution}
+\textbf{(a)}
+As $\exp(iz^2)$ is entire, by Cauchy-Goursat theorem, we have
+\eQb
+\int_{C_1} \exp(iz^2) dz + \int_{C_R} \exp(iz^2)dz + \int_{C_2} 
+\exp(iz^2) dz &=& 0, 
+\eQe
+where $C_1$ refers to the segment from $0$ to $R$, and $C_2$ refers
+to the segment from $Re^{i\frac{\pi}{4}}$ to $0$. Observe that
+we can parametrize points on $C_1$ as $z = x (0 \leq x \leq R)$, and
+points on $C_2$ as $z = re^{i\frac{\pi}{4}} (0 \leq r \leq R)$. Therefore,
+the above equality can be written as
+\eQb
+\int_{0}^{R} \exp(ix^2) dx &=& e^{i\frac{\pi}{4}} \int_{0}^{R} e^{-r^2} dr
+- \int_{C_R} e^{iz^2} dz. \\
+\eQe
+Equating the real and imaginary parts separately from the above equation 
+yields
+\eQb
+\int_{0}^{R} \cos(x^2) dx &=& \dfrac{1}{\sqrt{2}} \int_{0}^{R} e^{-r^2} dr
+- \text{Re} \int_{C_R} e^{iz^2} dz, \\
+\int_{0}^{R} \sin(x^2) dx &=& \dfrac{1}{\sqrt{2}} \int_{0}^{R} e^{-r^2} dr 
+- \text{Im} \int_{C_R} e^{iz^z} dz.
+\eQe 
+\hfill $\qed$
+
+\smallskip
+
+\textbf{(b)}
+We can parametrize the points on $C_R$ as $z = Re^{i\theta} ( 0 \leq
+\theta \leq \dfrac{\pi}{4} )$. It follows that
+\eQb
+\int_{C_R} e^{iz^2} &=& \int_{0}^{\frac{\pi}{4}} e^{iR^2e^{i2\theta}}R
+ie^{i\theta} d\theta 
+\eQe
+\hfill $\qed$
+
+\smallskip
+
+\textbf{(c)}
+Combining the result from (a),(b) and the given formula, we have
+\eQb
+\int_{0}^{\infty} \cos(x^2) dx &=& \dfrac{1}{\sqrt{2}} \int_{0}^{\infty}
+e^{-x^2}dx \\
+&=& \dfrac{1}{2}\sqrt{\dfrac{\pi}{2}}, \\
+\int_{0}^{\infty} \sin(x^2) dx &=& \dfrac{1}{\sqrt{2}} \int_{0}^{\infty}
+e^{-x^2}dx \\
+&=& \dfrac{1}{2}\sqrt{\dfrac{\pi}{2}}, \\
+\eQe
+as desired.
+\hfill $\qed$
 
 \end{solution}
 
