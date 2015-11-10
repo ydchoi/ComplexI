@@ -237,7 +237,64 @@ as desired. $\qed$
 \begin{question}[283-2]
 \end{question}
 \begin{solution}
-
+We use the following branch as suggested:
+\eQb
+f(z) &=& \dfrac{z^{\frac{-1}{2}}}{z^2+1} \\
+&=& \dfrac{e^{-\frac{1}{2}\log(z)}}{z^2+1} (|z| > 0, -\dfrac{\pi}{2} < 
+\arg(z) < \dfrac{3\pi}{2}).
+\eQe
+We integrate the branch over the indented path in figure 109. 
+Starting with Cauchy's residue theorem, we write
+\eQb
+\int_{L_1} f(z) dz + \int_{L_2} f(z) dz 
+&=& 2\pi i \text{Res}_{z=i} f(z) - \int_{C_\rho} f(z) dz - \int_{C_R} f(z)dz.
+\eQe
+By using the parametrizations of 
+\eQb
+L_1 : z &=& re^{i0} = r (\rho \leq r \leq R), \\  
+-L_2 : z &=& re^{i\pi} = -r (\rho \leq r \leq R),
+\eQe
+we obtain
+\eQb
+\int_{L_1} f(z) dz + \int_{L_2} f(z) dz 
+&=& \int_{\rho}^{R} \dfrac{1}{\sqrt{r}(r^2+1)} dr 
+- i\int_{\rho}^{R} \dfrac{1}{\sqrt{r}(r^2+1)}dr \\
+&=& (1-i) \int_{\rho}^{R} \dfrac{1}{\sqrt{r}(r^2+1)} dr . 
+\eQe
+Observe that $z = i$ is a simple pole of $f(z)$, as it can be written that
+$f(z) = \dfrac{z^{-\frac{1}{2}}}{(z+i)(z-i)}$, and $\dfrac{z^{-\frac{1}{2}}}
+{(z+i)}$ is analytic and nonzero at $z = i$. Therefore, the residue at 
+$z = i$ can be computed by 
+\eQb
+\text{Res}_{z=i} f(z) &=& \dfrac{z^{-\frac{1}{2}}}{z+i} ]_{z=i} \\
+&=& \dfrac{exp(-\frac{1}{2}(\ln(1) + i\frac{\pi}{2}))}{2i}  \\
+&=& \dfrac{e^{-i\frac{\pi}{4}}}{2i} \\
+&=& \dfrac{1}{2i} (\dfrac{1-i}{\sqrt{2}}). 
+\eQe 
+For the integral terms on $C_\rho$ and $C_R$, by the ML inequality, 
+we have
+\eQb
+\left| \int_{C_\rho} f(z) dz \right| &\leq&
+\int_{C_\rho} |f(z)| dz \\
+&\leq& \dfrac{\pi \rho}{\sqrt{\rho}(1-\rho^2 )} = \dfrac{\pi\sqrt{\rho}}{1-
+\rho^2}, \\ 
+\left| \int_{C_R} f(z) dz \right| &\leq& \int_{C_R} |f(z)| dz \\
+&\leq& \dfrac{\pi \sqrt{R} }{(R^2-1)}. \\
+\eQe
+As $R \to \infty$ and $\rho \to 0$, we have
+$\dfrac{\pi\sqrt{R}}{(R^2-1)} \to 0$, and 
+$\dfrac{\pi\sqrt{\rho}}{1-\rho^2} \to 0$ respectively. Hence, it follows
+that
+\eQb
+(1-i)\int_{0}^{\infty} \dfrac{1}{\sqrt{r}(r^2+1)} dr 
+&=& \dfrac{\pi(1-i)}{\sqrt{2}},
+\eQe
+which can be re-written as 
+\eQb
+\int_{0}^{\infty} \dfrac{1}{\sqrt{r}(r^2+1)} dr 
+&=& \dfrac{\pi}{\sqrt{2}},
+\eQe
+as desired \hfill $\qed$
 \end{solution}
 
 \bigskip
@@ -245,10 +302,76 @@ as desired. $\qed$
 \begin{question}[283-4]
 \end{question}
 \begin{solution}
+We use the branch $f(z) = \dfrac{\exp(\frac{1}{3}\log(z)}{(z+a)(z+b)}$,
+for $|z| > 0, 0<\arg(z)<2\pi$ over the contour on section 91. 
+By the reisude theorem, we have
+\eQb
+\int_{L_1} f(z) dz + \int_{L_2} f(z) dz + \int_{C_\rho} f(z) dz +
+\int_{C_R} f(z) dz = 2\pi i (B_1 + B_2),
+\eQe
+where $B_1$ and $B_2$ refer to the residues from $-a$ and $-b$ respectively.
+Firstly, we show that The integrals over the circular paths goes to $0$ as
+follows:
+\eQb
+\left| \int_{C_\rho} f(z) dz \right| &\leq&
+\dfrac{\rho^{\frac{1}{3}}}{(a-\rho)(b-\rho)} 2\pi \rho \\ 
+&=& \dfrac{2\pi \rho^{\frac{1}{3}} \rho}{(a-\rho)(b-\rho)}. 
+\eQe
+As $\rho \to 0$, we see that the upper bound limits to $0$. Therefore,
+the integral goes to $0$. By the same computation, we also see that
+the integral over $C_R$. It follows that
+\eQb
+\int_{L_1} f(z) dz + \int_{L_2} f(z) dz 
+= 2\pi i (B_1 + B_2).
+\eQe 
+The residues can be computed as follows:
+\eQb
+B_1 &=& \text{Res}_{z=-a} f(z) \\
+&=& \dfrac{\exp(\frac{1}{3}\log(-b))}{-a+b} \\
+&=& -\dfrac{\exp(\frac{1}{3}(\ln(a) + i\pi))}{a-b} \\
+&=& -\dfrac{e^{i\frac{\pi}{3}a^{\frac{1}{3}}}}{a-b} \\
+B_2 &=& \dfrac{e^{i\frac{\pi}{3}}b^{\frac{1}{3}}}{a-b},
+\eQe
+by symmetry. 
+
+
+
 \end{solution}
 
+\begin{question}[283-5]
+\end{question}
+\begin{solution}
+First, as before, we have
+\eQb
+\int_{0}^{\pi} \dfrac{d\theta}{(a + \cos(\theta))^2} 
+&=& \dfrac{1}{2} \int_{-\pi}^{\pi} \dfrac{d\theta}{(a+\cos(\theta))^2}.
+\eQe
+We substitute $ \cos(\theta) = \dfrac{z + z^{-1}}{2}$, and
+$d\theta = \dfrac{1}{iz}dz$ to the last integral. Then, it follows that
+\eQb
+\int_{-\pi}^{\pi} \dfrac{d\theta}{(a+\cos(\theta))^2} 
+&=& \int_{C} \dfrac{1}{\left( a + \frac{z + z^{-1}}{2} 
+\right)^2} \dfrac{1}{iz} dz \\
+&=& \dfrac{4}{i}\int_{C} \dfrac{z}{(2az+z^2+1)^2} dz, 
+\eQe
+where $C$ denotes the contour of the unit circle.
+Using the quadratic formulat, we obtain that the integrand has
+a pole of order 2 at $z = -a \pm \sqrt{a^2 -1}$. As $a > 1$, we have
+that $z = -a - \sqrt{a^2-1}$ is the only singular point in $C$, which
+results in the residue of $\dfrac{a}{4(\sqrt{a^2-1})^3}$. Therefore,
+by the residue theorem, we have
+\eQb
+\int_{0}^{\pi} \dfrac{d\theta}{(a + \cos(\theta))^2} &=&
+\dfrac{1}{2} \dfrac{4}{i} \dfrac{2\pi i a}{4 \sqrt{a^2-1}^3} \\
+&=& \dfrac{\pi a}{(\sqrt{a^2-1})^3}, 
+\eQe 
+as desired. \hfill $\qed$
+ 
+\end{solution}
 
-\begin{question}[287-1]
+\bigskip
+
+\begin{question}[287-6]
 \end{question}
 \begin{solution}
 Observe that the following equality holds, by the linearity of integration: 
