@@ -210,7 +210,7 @@ As $B_1$ is a circle of radius $1$, centered around the origin,
 we have that the winding number of $B_1$ is simply $1$. Observe that
 the given function is holomorphic, hence meromorphic with zero poles, 
 interior to $B_1$ and is analytic on $B_1$. Furthermore, as $|f(z)| > 2$
-for $z| = 1$, we have $f$ is nonzero on $B_1$. Therefore, by the argument
+for $|z| = 1$, we have $f$ is nonzero on $B_1$. Therefore, by the argument
 principle, we have that the winding number is equal to $Z - P$ where
 $Z$ is the number of zeros and $P$ is the number of poles of $f(z)$
 inside $B_1$. Since $P = 0$ and the winding number is $1$,
@@ -230,7 +230,17 @@ inside $B_1$. Since $P = 0$ and the winding number is $1$,
 \begin{solution}
 As $B_1$ is a circle of radius 1, centered around the origin, we
 have that the winding number of $B_1$ is simply $1$. As $f$ is holomorphic
-on $B_R$ for some $R > 1$, we have $f$ is analytic on $B_1$. 
+on $B_R$ for some $R > 1$, we have $f$ is analytic on $B_1$. On $B_1$, as 
+we have $|f(z)| < 1$, it follows that 
+$|f(z) - z| \leq ||f(z)| - |z|| = 1 - |f(z)| > 0$. Therefore, $f(z) - z$
+is nonzero on $B_1$. Therefore, by the argument principle, as above,
+with $P = 0$, we have $Z = 1$. Therefore, there exists a unique solution 
+to the equation $f(z) - z = 0$ inside $B_1$, 
+which is also a solution to $f(z) = z$ as well.
+Hence, there exists a unique solution to $f(z) = z$ inside $B_1$. When
+we only have $|f(z) \leq 1$ for $|z|| = 1$, we lose the nonzero property
+of $f(z) - z$ on $B_1$. Therefore, the argument will not work in that case.
+\hfill $\qed$
 \end{solution}
 
 \bigskip
