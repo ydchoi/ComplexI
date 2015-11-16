@@ -41,7 +41,7 @@
 \usepackage{verbatimbox}
 \usepackage{listings}
 \title{Complex Analysis I: \\
-Problem Set VIII}
+Problem Set IX}
 
 
 \author{
@@ -71,7 +71,7 @@ New York University\\
 \maketitle
 
 \begin{abstract}
-This work contains the solutions to the problem set VIII
+This work contains the solutions to the problem set IX
 of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \end{abstract}
 
@@ -85,6 +85,71 @@ of Complex Analysis I 2015 at Courant Institute of Mathematical Sciences.
 \end{figure}
 \end{question}
 \begin{solution}
+By drawing the contour on the complex plane, we observe that 
+$\gamma$ forms 4 simple closed contours, for each direction of the axis.
+We denote these contours as $\gamma_1$, $\gamma_2$, $\gamma_3$, and
+$\gamma_4$ respectively in a counter-clockwise fashion. Observe that
+$f(z) = \dfrac{1}{z^2+1}$ is singular at $z = \pm i$. $z = i$ belongs
+to the interior of $\gamma_2$ contour, and $z = -i$ belongs to the
+interior of $\gamma_4$ contour. By the Cauchy-Residue formula, we obtain
+\eQb
+\int_{\gamma_1} \dfrac{dz}{z^2+1} &=& 0 \\
+\int_{\gamma_2} \dfrac{dz}{z^2+1} &=& 2\pi i 
+\text{Res}_{z=i} \dfrac{1}{z^2+1}  \\
+\int_{\gamma_3} \dfrac{dz}{z^2+1} &=& 0 \\
+\int_{\gamma_4} \dfrac{dz}{z^2+1} &=& 2\pi i 
+\text{Res}_{z=-i} \dfrac{1}{z^2+1}.\\
+\eQe
+As it can be written that
+$f(z) = \dfrac{\phi(z)}{z-i}$, where $\phi(z) = \dfrac{1}{z+i}$,
+the residue at $z = i$ is $\phi(i) = \dfrac{1}{2i}$. On the other hand,
+as it can be written that
+$f(z) = \dfrac{\phi(z)}{z+i}$, where $\phi(z) = \dfrac{1}{z-i}$, 
+the residue at $z = -i$ is $\phi(i) = -\dfrac{1}{2i}$. Consequently, we have
+\eQb
+\int_{\gamma_2} \dfrac{dz}{z^2+1} &=& 2\pi i \dfrac{1}{2i} = \pi  \\
+\int_{\gamma_4} \dfrac{dz}{z^2+1} &=& 2\pi i (-\dfrac{1}{2i}) = -\pi. \\
+\eQe
+Therefore, it follows that
+\eQb
+\int_{\gamma} \dfrac{dz}{z^2+1} &=& 
+\int_{\gamma_1} \dfrac{dz}{z^2+1} + 
+\int_{\gamma_2} \dfrac{dz}{z^2+1} +
+\int_{\gamma_3} \dfrac{dz}{z^2+1} +
+\int_{\gamma_4} \dfrac{dz}{z^2+1} \\
+&=& 0.
+\eQe
+\hfill $\qed$
+\end{solution}
+
+\bigskip
+\begin{question}[2]
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{cv-9-2}
+\end{figure}
+\end{question}
+\begin{solution}
+Observe that the function has isolated singularities at $z = \pm i \pi$. 
+By observing the contour, we see that $i \pi$ lies outside of the contour,
+as $\gamma(\dfrac{\pi}{2}) = \dfrac{\pi}{2}e^{i\frac{\pi}{2}} = 
+i\dfrac{\pi}{2}$. On the other hand, $z = -i\pi$ lies on the interior of the
+contour 
+as $\gamma(\dfrac{3\pi}{2}) = \dfrac{3\pi}{2}e^{i\frac{3\pi}{2}} =
+-\dfrac{3\pi}{2}i$. Hence, by the Cauchy Residue theorem, we have
+\eQb
+\int_{\gamma} \dfrac{dz}{z^2+\pi^2} &=& 2\pi i \text{Res}_{z=-i\pi} 
+\dfrac{1}{z^2+\pi^2}.
+\eQe  
+As it can be written that $f(z) = \dfrac{\phi(z)}{z+i\pi}$, where
+$\phi(z) = \dfrac{1}{z - i\pi}$, the residue at $z=-i\pi$ is 
+$\phi(-i\pi) = -\dfrac{1}{2i\pi}$. Hence, it follows that
+\eQb
+\int_{\gamma} \dfrac{dz}{z^2+\pi^2} &=& 2\pi i (-\dfrac{1}{2i\pi}) \\
+&=& -1. 
+\eQe
+\hfill $\qed$
 \end{solution}
 
 \begin{question}[3]
