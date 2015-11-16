@@ -152,35 +152,85 @@ $\phi(-i\pi) = -\dfrac{1}{2i\pi}$. Hence, it follows that
 \hfill $\qed$
 \end{solution}
 
+\newpage
+
 \begin{question}[3]
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{cv-9-3}
+\end{figure}
 \end{question}
 \begin{solution}
-As we have $\lambda - z -e^{-\lambda} = 0$, we have 
-\eQb
-| \lambda - z | = e^{-\text{Re} z}. 
-\eQe
-Since $\text{Re} z > 0$, to satisfy the inequality, we must have
-\eQb
-| \lambda - z| < 1.
-\eQe
+Firstly, the equation can be re-written as $\lambda - z = e^{z}$.
+Observe that it is necessary to have
+$| \lambda - z | = e^{-\text{Re} z}$ to satisfy the above equation.
+As we only limit the space of possible solutions to be $\{ z : \text{Re} z 
+> 0\}$, it follows that it is necessary to have $|\lambda - z | < 1$.
+Define $C = \{ z \in \mathbb{C} \> | \> | \lambda - z| < 1 \}$. So far,
+we have shown that the solutions to the given equation, if it exists
+must lie on the interior of $C$. 
+Let $f(z) = e^{-z}$
+and $g(z) = \lambda - z $. Then, it follows that on $C$, $|g(z)| = |\lambda
+-z | = 1$, and as $\lambda > 1$, $|f(z)| = |e^{-z}| = e^{-\text{Re}z} < 1$. 
+As $f(z)$ and $g(z)$ are entire, they are also analytic inside
+and on $C$. The conditions of Rouche's theorem are thus satisfied. Hence,
+$\lambda - z$ and $\lambda - z - e^{-z}$ have the same number of zeros, 
+counting multiplicities inside $C$. Observe that $\lambda - z$ has a 
+zero on $z = \lambda$. Thus, $\lambda -z -e^{-z}$ has one solution
+inside $C$. As we have shown that a solution to $\lambda -z -e^{-\lambda}$
+must lie inside $C$, we have shown that $\lambda -z -e^{\lambda}$ has
+exactly one solution. \hfill $\qed$
 
 \end{solution}
 
 \bigskip
 
 \begin{question}[4]
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{cv-9-4}
+\end{figure}
 \end{question}
 \begin{solution}
-
 \end{solution}
 
 \bigskip
 
 \begin{question}[5]
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{cv-9-5}
+\end{figure}
+\end{question}
+\begin{solution}
+As $B_1$ is a circle of radius $1$, centered around the origin,
+we have that the winding number of $B_1$ is simply $1$. Observe that
+the given function is holomorphic, hence meromorphic with zero poles.
+interior to $B_1$ and is analytic on $B_1$. Furthermore, as $|f(z)| > 2$
+for $z| = 1$, we have $f$ is nonzero on $B_1$. Therefore, by the argument
+principle, we have that the winding number is equal to $Z - P$ where
+$Z$ is the number of zeros and $P$ is the number of poles of $f(z)$
+inside $B_1$. Since $P = 0$ and the winding number is $1$,
+ we have that $Z = 1$. $f$ must have zero in $B_1$.
+ \hfill $\qed$
+\end{solution}
+
+\bigskip
+
+\begin{question}[6]
+\hfill
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{cv-9-6}
+\end{figure}
 \end{question}
 \begin{solution}
 \end{solution}
 
+\bigskip
 
 
 \end{document}
