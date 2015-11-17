@@ -194,15 +194,25 @@ exactly one solution. \hfill $\qed$
 \end{figure}
 \end{question}
 \begin{solution}
+Firstly, observe that the number of poles $P$ is $0$, as the given 
+function $z^4 + 8z^3 + 3z^2 + 8z + 3$, is entire. 
 Let $\gamma$ be a contour, which moves from $-iR$ to $iR$ as a semi-circle
-of a radius $R$. On $\gamma$, we can parametrize $z$ has $z = Re^{i\theta}$.
+of a radius $R$. Since $P = 0$, as $R \to \infty$, 
+by the argument principle
+$Z = \dfrac{1}{2\pi}\triangle_{\gamma} 
+\text{arg} f(z)$, where $Z$ is the number
+of zeros in the right plane.  
+On $\gamma$, we can parametrize $z$ has $z = Re^{i\theta}$.
 Then, the given equation can be re-written as 
 \eQb
 R^{4}e^{i4\theta} (1 + \dfrac{8}{Re^{i\theta}} + 
 \dfrac{3}{R^{2}e^{i2\theta}} + \dfrac{8}{R^{3}e^{i3\theta}}+ 
 \dfrac{3}{R^{4}e^{i4\theta}}) &=& 0. \\
 \eQe 
-Observe that as $R \to \infty$, LHS $\to R^4e^{i4t}$. 
+Observe that as $R \to \infty$, LHS $\to R^4e^{i4\theta}$. Hence,
+the argument changes by $4\pi$ from $-\dfrac{\pi}{2}$ to $\dfrac{\pi}{2}$.
+It follows that $Z = \dfrac{1}{2\pi} 4\pi = 2$. There are two zeros
+in the right plane. \hfill $\qed$  
 \end{solution}
 
 \newpage
